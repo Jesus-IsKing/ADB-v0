@@ -49,7 +49,12 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           <div className="space-y-3">
             <h4 className="font-bold text-foreground">Support</h4>
             <Link
-              href="/contact"
+              href="/contact?scroll=top"
+              onClick={() => {
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               className="block text-muted-foreground hover:text-accent transition-colors"
             >
               Contact Us
