@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { ButtonCTA } from '@/components/button-cta';
+import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Contact Adorabella | Get in Touch',
@@ -184,7 +185,7 @@ export default function ContactPage() {
               <p className="text-muted-foreground">
                 Still have questions? We're here to help!
               </p>
-              <a href="#contact-form">
+              <a href="#contact-section">
                 <ButtonCTA size="lg">
                   Get in Touch
                 </ButtonCTA>
@@ -192,21 +193,47 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* Conversion CTA Section */}
+        <section className="w-full py-20 md:py-32 bg-gradient-to-b from-background to-secondary border-b border-border">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 animate-slideUp">
+            <div className="glass-gold p-8 md:p-12 rounded-lg space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
+                Ready to Grow Your <span className="text-accent">Beauty Business?</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Join our thriving community of beauty professionals and start renting a premium chair at Adorabella. Your success is our priority.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a href="#contact-section">
+                  <ButtonCTA size="lg">
+                    Start Your Application
+                  </ButtonCTA>
+                </a>
+                <Link href="/">
+                  <ButtonCTA 
+                    variant="outline" 
+                    size="lg"
+                    className="border-accent text-accent hover:bg-accent/10"
+                  >
+                    Learn More
+                  </ButtonCTA>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full bg-secondary border-t border-border py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-muted-foreground">
-            © {new Date().getFullYear()} Adorabella Salon. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            <a href="/" className="hover:text-accent transition-colors">
-              Back to Home
-            </a>
-          </p>
-        </div>
-      </footer>
+      {/* Full Footer Component */}
+      <Footer 
+        onCTAClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onBackToTop={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
     </div>
   );
 }
