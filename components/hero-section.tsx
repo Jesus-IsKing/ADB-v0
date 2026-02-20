@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { ButtonCTA } from './button-cta';
+import { Chair3DScene } from './chair-3d-scene';
 
 interface HeroSectionProps {
   onCTAClick?: () => void;
@@ -10,10 +11,15 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-background pointer-events-none" />
+      {/* 3D Chair Background */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <Chair3DScene />
+      </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background pointer-events-none z-10" />
+
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="animate-slideInLeft space-y-6 md:space-y-8">
@@ -70,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <svg
           className="w-6 h-6 text-accent"
           fill="none"
