@@ -1,17 +1,17 @@
-import type { Metadata } from 'next';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { ButtonCTA } from '@/components/button-cta';
 import { Footer } from '@/components/footer';
-
-export const metadata: Metadata = {
-  title: 'Contact Adorabella | Get in Touch',
-  description:
-    'Have questions about our chair rental services? Contact Adorabella today and let\'s discuss how we can help you succeed.',
-  keywords: 'contact adorabella, salon inquiry, chair rental contact',
-};
+import { ModalCTA } from '@/components/modal-cta';
+import { ModalReasons } from '@/components/modal-reasons';
 
 export default function ContactPage() {
+  const [showJoinModal, setShowJoinModal] = useState(false);
+  const [showReasonsModal, setShowReasonsModal] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header with Navigation */}
@@ -205,20 +205,18 @@ export default function ContactPage() {
                 Join our thriving community of beauty professionals and start renting a premium chair at Adorabella. Your success is our priority.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <a href="#contact-section">
-                  <ButtonCTA size="lg">
-                    Start Your Application
-                  </ButtonCTA>
-                </a>
-                <Link href="/">
-                  <ButtonCTA 
-                    variant="outline" 
-                    size="lg"
-                    className="border-accent text-accent hover:bg-accent/10"
-                  >
-                    Learn More
-                  </ButtonCTA>
-                </Link>
+                <button
+                  onClick={() => setShowJoinModal(true)}
+                  className="inline-flex items-center justify-center px-8 py-3 bg-accent text-accent-foreground font-bold rounded-lg hover:bg-[#c9a227] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  Start Your Application
+                </button>
+                <button
+                  onClick={() => setShowReasonsModal(true)}
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-accent text-accent bg-transparent rounded-lg hover:bg-accent/10 font-bold transition-colors"
+                >
+                  Learn More
+                </button>
               </div>
             </div>
           </div>
@@ -233,6 +231,16 @@ export default function ContactPage() {
         onBackToTop={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
+      />
+
+      {/* Modals */}
+      <ModalCTA 
+        isOpen={showJoinModal} 
+        onClose={() => setShowJoinModal(false)} 
+      />
+      <ModalReasons 
+        isOpen={showReasonsModal} 
+        onClose={() => setShowReasonsModal(false)} 
       />
     </div>
   );
