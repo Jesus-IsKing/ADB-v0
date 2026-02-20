@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { ButtonCTA } from '@/components/button-cta';
@@ -11,6 +11,10 @@ import { ModalReasons } from '@/components/modal-reasons';
 export default function ContactPage() {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [showReasonsModal, setShowReasonsModal] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
