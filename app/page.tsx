@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { KineticNavigation } from '@/components/kinetic-navigation';
+import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/hero-section';
 import { FeaturesSection } from '@/components/features-section';
 import { PricingSection } from '@/components/pricing-section';
@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div ref={topRef} className="min-h-screen bg-background text-foreground">
-      <KineticNavigation />
+      <Navbar onCTAClick={() => setIsModalOpen(true)} />
 
       <main className="w-full pt-16 md:pt-20">
         <HeroSection onCTAClick={() => setIsModalOpen(true)} />
