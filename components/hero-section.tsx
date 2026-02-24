@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
               <ButtonCTA size="lg" onClick={onCTAClick}>
                 Get Started Today
               </ButtonCTA>
-              <ButtonCTA size="lg" variant="outline">
+              <ButtonCTA size="lg" variant="outline" href="/contact">
                 Learn More
               </ButtonCTA>
             </div>
