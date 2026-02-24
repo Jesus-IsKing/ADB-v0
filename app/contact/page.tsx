@@ -156,19 +156,51 @@ export default function ContactPage() {
               {[
                 {
                   q: 'What are the rental requirements?',
-                  a: 'We require a valid ID and proof of professional licensure. New applicants must complete a quick verification process.',
+                  a: 'We require a valid ID, proof of professional licensure (cosmetology, esthetician, etc.), and liability insurance. New applicants complete a quick verification process within 24-48 hours. We also ask for professional references to ensure a great community fit.',
+                },
+                {
+                  q: 'What are the pricing options and payment terms?',
+                  a: 'We offer flexible weekly, bi-weekly, and monthly rental plans starting at competitive rates. Payment can be made monthly or annually (with a 10% discount). Invoices are sent via email, and we accept all major payment methods for your convenience.',
                 },
                 {
                   q: 'Can I upgrade or downgrade my plan?',
-                  a: 'Absolutely! You can adjust your plan anytime. Changes take effect at the start of your next billing cycle.',
+                  a: 'Absolutely! You can adjust your plan anytime based on your needs. Changes take effect at the start of your next billing cycle, and we'll prorate any adjustments fairly.',
                 },
                 {
                   q: 'What if I need to cancel?',
-                  a: 'You can cancel anytime with 7 days notice. No hidden fees or long-term contracts required.',
+                  a: 'You can cancel anytime with 7 days written notice. There are no hidden fees or long-term contracts required. We offer month-to-month flexibility so you\'re never locked in.',
                 },
                 {
-                  q: 'Do you provide supplies?',
-                  a: 'Basic supplies are included with all plans. Premium supplies and specialty items are available for purchase.',
+                  q: 'What facilities and amenities are included?',
+                  a: 'All chairs come with a premium styling station, mirror, comfortable seating, excellent lighting, and free WiFi. Access to shared break areas, water stations, and parking is included. Additional amenities like private restrooms and extended hours are available with premium plans.',
+                },
+                {
+                  q: 'Do you provide supplies and equipment?',
+                  a: 'Basic supplies like disinfectant and cleaning materials are included. You bring your own tools and products. Premium supplies (towels, capes, etc.) can be purchased monthly or you can provide your own. High-quality chairs and stations are fully maintained by us.',
+                },
+                {
+                  q: 'What happens if there\'s damage to the chair or station?',
+                  a: 'Renters are responsible for normal wear and tear. Significant damage is covered by your liability insurance. We require professional insurance before rental begins. Minor issues are handled with goodwill; major damage is addressed through your insurance.',
+                },
+                {
+                  q: 'Do you offer liability insurance?',
+                  a: 'You must carry your own professional liability insurance (typically $1-2M coverage). We recommend policies that cover chair rental. If you don\'t have insurance, we can provide referrals to affordable providers who specialize in salon professionals.',
+                },
+                {
+                  q: 'What are the hours of operation?',
+                  a: 'Adorabella is open Monday-Saturday, 8 AM-7 PM, and Sunday 10 AM-5 PM. Extended hours and weekend-only packages are available. Private scheduling can be arranged for special events or private bookings.',
+                },
+                {
+                  q: 'Can I have my own clients visit my chair?',
+                  a: 'Yes! You can service your existing clients at your rented chair. We encourage beauty professionals to build their clientele. You can also accept walk-in clients through our reception area for a small booking fee.',
+                },
+                {
+                  q: 'Is there support available if I need help?',
+                  a: 'Our dedicated support team is available during business hours via phone, email, or in-person. We provide onboarding assistance, technical support, and business guidance. Monthly networking events and professional development workshops are available for all renters.',
+                },
+                {
+                  q: 'Can I renew or extend my rental easily?',
+                  a: 'Yes! Renewals are automatic unless you provide 7 days notice of cancellation. Extending your rental or moving to a different plan is as simple as contacting our team. Loyal renters receive priority support and exclusive offers.',
                 },
               ].map((faq, idx) => (
                 <div
