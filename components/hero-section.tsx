@@ -1,93 +1,93 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import Image from 'next/image';
+import { ButtonCTA } from './button-cta';
+import { Chair3DScene } from './chair-3d-scene';
 
 interface HeroSectionProps {
   onCTAClick?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <section className="py-16 w-full flex justify-center items-center px-4 md:px-6 bg-background">
-      <div
-        className="w-full max-w-7xl relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="relative overflow-hidden rounded-3xl md:rounded-[48px] border border-border bg-card shadow-lg min-h-[600px] md:min-h-[700px] flex flex-col items-center justify-center duration-500">
-          {/* Animated dithering background effect */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-30 dark:opacity-25">
-            <svg
-              className={`w-full h-full transition-all duration-500 ${isHovered ? 'opacity-40 dark:opacity-35' : 'opacity-30 dark:opacity-25'}`}
-              preserveAspectRatio="xMidYMid slice"
-              viewBox="0 0 1200 700"
-            >
-              <defs>
-                <filter id="dither-noise">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise" />
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale={isHovered ? '15' : '8'} />
-                </filter>
-              </defs>
-              <rect width="1200" height="700" fill="#fb7232" opacity="0.6" filter="url(#dither-noise)" />
-            </svg>
-          </div>
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* 3D Chair Background */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <Chair3DScene />
+      </div>
 
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-card via-transparent to-card opacity-80 z-1" />
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background pointer-events-none z-10" />
 
-          {/* Content */}
-          <div className="relative z-10 px-6 max-w-4xl mx-auto text-center flex flex-col items-center py-12 md:py-0">
-            {/* Badge */}
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Premium Salon Spaces
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Text Content */}
+          <div className="animate-slideInLeft space-y-6 md:space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
+                Premium Chair Rentals for{' '}
+                <span className="text-accent">Beauty Professionals</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+                Start your salon business with Adorabella. Flexible terms, premium facilities, and dedicated support to help you thrive.
+              </p>
             </div>
 
-            {/* Headline */}
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground mb-6 leading-[1.1]">
-              Your Chair,{' '}
-              <span className="text-foreground/70">
-                Your Success
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-              Join 50+ thriving beauty professionals at Adorabella. Flexible terms, premium facilities, and 24/7 support—everything you need to build your salon empire.
-            </p>
-
-            {/* Button */}
-            <button
-              onClick={onCTAClick}
-              className="group relative inline-flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 md:px-12 text-base font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:scale-105 active:scale-95 hover:ring-4 hover:ring-primary/20"
-            >
-              <span className="relative z-10">Join Adorabella Today</span>
-              <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <ButtonCTA size="lg" onClick={onCTAClick}>
+                Get Started Today
+              </ButtonCTA>
+              <ButtonCTA size="lg" variant="outline">
+                Learn More
+              </ButtonCTA>
+            </div>
 
             {/* Trust indicators */}
-            <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-border/50">
+            <div className="flex flex-wrap gap-4 pt-6 border-t border-border">
               <div className="space-y-1">
-                <p className="text-2xl md:text-3xl font-bold text-primary">50+</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Professionals</p>
+                <p className="text-2xl font-bold text-accent">50+</p>
+                <p className="text-sm text-muted-foreground">Beauty Professionals</p>
               </div>
               <div className="space-y-1">
-                <p className="text-2xl md:text-3xl font-bold text-primary">100%</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Satisfaction</p>
+                <p className="text-2xl font-bold text-accent">100%</p>
+                <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
               </div>
               <div className="space-y-1">
-                <p className="text-2xl md:text-3xl font-bold text-primary">24/7</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Support</p>
+                <p className="text-2xl font-bold text-accent">24/7</p>
+                <p className="text-sm text-muted-foreground">Support Available</p>
               </div>
             </div>
           </div>
+
+          {/* Hero Image */}
+          <div className="animate-slideInRight relative h-[400px] sm:h-[500px] lg:h-[600px]">
+            <Image
+              src="/hero.jpg"
+              alt="Luxury salon chair rental space - Adorabella Premium Beauty Studio"
+              fill
+              className="object-cover rounded-xl shadow-2xl shadow-accent/20"
+              priority
+            />
+            {/* Decorative accent border */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-accent/30 to-transparent rounded-xl -z-10 blur-xl opacity-30" />
+          </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <svg
+          className="w-6 h-6 text-accent"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </section>
   );
