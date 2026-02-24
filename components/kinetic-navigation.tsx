@@ -1,145 +1,17 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { CustomEase } from 'gsap/CustomEase';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(CustomEase);
-}
-
 export function KineticNavigation() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    try {
-      if (!gsap.parseEase('main')) {
-        CustomEase.create('main', '0.65, 0.01, 0.05, 0.99');
-        gsap.defaults({ ease: 'main', duration: 0.7 });
-      }
-    } catch (e) {
-      gsap.defaults({ ease: 'power2.out', duration: 0.7 });
-    }
-
-    const ctx = gsap.context(() => {
-      const menuItems = containerRef.current!.querySelectorAll('.menu-list-item[data-shape]');
-      const shapesContainer = containerRef.current!.querySelector('.ambient-background-shapes');
-
-      menuItems.forEach((item) => {
-        const shapeIndex = item.getAttribute('data-shape');
-        const shape = shapesContainer ? shapesContainer.querySelector(`.bg-shape-${shapeIndex}`) : null;
-
-        if (!shape) return;
-
-        const shapeEls = shape.querySelectorAll('.shape-element');
-
-        const onEnter = () => {
-          if (shapesContainer) {
-            shapesContainer.querySelectorAll('.bg-shape').forEach((s) => s.classList.remove('active'));
-          }
-          shape.classList.add('active');
-
-          gsap.fromTo(
-            shapeEls,
-            { scale: 0.5, opacity: 0, rotation: -10 },
-            { scale: 1, opacity: 1, rotation: 0, duration: 0.6, stagger: 0.08, ease: 'back.out(1.7)', overwrite: 'auto' }
-          );
-        };
-
-        const onLeave = () => {
-          gsap.to(shapeEls, {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.3,
-            ease: 'power2.in',
-            onComplete: () => shape.classList.remove('active'),
-            overwrite: 'auto',
-          });
-        };
-
-        item.addEventListener('mouseenter', onEnter);
-        item.addEventListener('mouseleave', onLeave);
-
-        (item as any)._cleanup = () => {
-          item.removeEventListener('mouseenter', onEnter);
-          item.removeEventListener('mouseleave', onLeave);
-        };
-      });
-    }, containerRef);
-
-    return () => {
-      ctx.revert();
-      if (containerRef.current) {
-        const items = containerRef.current.querySelectorAll('.menu-list-item[data-shape]');
-        items.forEach((item: any) => item._cleanup && item._cleanup());
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const navWrap = containerRef.current!.querySelector('.nav-overlay-wrapper');
-      const menu = containerRef.current!.querySelector('.menu-content');
-      const overlay = containerRef.current!.querySelector('.overlay');
-      const bgPanels = containerRef.current!.querySelectorAll('.backdrop-layer');
-      const menuLinks = containerRef.current!.querySelectorAll('.nav-link');
-      const fadeTargets = containerRef.current!.querySelectorAll('[data-menu-fade]');
-
-      const menuButton = containerRef.current!.querySelector('.nav-close-btn');
-      const menuButtonTexts = menuButton?.querySelectorAll('p');
-      const menuButtonIcon = menuButton?.querySelector('.menu-button-icon');
-
-      const tl = gsap.timeline();
-
-      if (isMenuOpen) {
-        if (navWrap) navWrap.setAttribute('data-nav', 'open');
-
-        tl.set(navWrap, { display: 'block' })
-          .set(menu, { xPercent: 0 }, '<')
-          .fromTo(menuButtonTexts, { yPercent: 0 }, { yPercent: -100, stagger: 0.2 })
-          .fromTo(menuButtonIcon, { rotate: 0 }, { rotate: 315 }, '<')
-          .fromTo(overlay, { autoAlpha: 0 }, { autoAlpha: 1 }, '<')
-          .fromTo(bgPanels, { xPercent: 101 }, { xPercent: 0, stagger: 0.12, duration: 0.575 }, '<')
-          .fromTo(menuLinks, { yPercent: 140, rotate: 10 }, { yPercent: 0, rotate: 0, stagger: 0.05 }, '<+=0.35');
-
-        if (fadeTargets.length) {
-          tl.fromTo(fadeTargets, { autoAlpha: 0, yPercent: 50 }, { autoAlpha: 1, yPercent: 0, stagger: 0.04, clearProps: 'all' }, '<+=0.2');
-        }
-      } else {
-        if (navWrap) navWrap.setAttribute('data-nav', 'closed');
-
-        tl.to(overlay, { autoAlpha: 0 })
-          .to(menu, { xPercent: 120 }, '<')
-          .to(menuButtonTexts, { yPercent: 0 }, '<')
-          .to(menuButtonIcon, { rotate: 0 }, '<')
-          .set(navWrap, { display: 'none' });
-      }
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [isMenuOpen]);
+  const [activeShape, setActiveShape] = useState<string | null>(null);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div ref={containerRef} className="kinetic-nav-wrapper">
+    <div className="kinetic-nav-wrapper">
       <div className="site-header-wrapper">
         <header className="header">
           <div className="container is--full">
@@ -187,9 +59,9 @@ export function KineticNavigation() {
       </div>
 
       <section className="fullscreen-menu-container">
-        <div data-nav="closed" className="nav-overlay-wrapper">
+        <div data-nav={isMenuOpen ? 'open' : 'closed'} className={`nav-overlay-wrapper transition-all duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>
           <div className="overlay" onClick={closeMenu}></div>
-          <nav className="menu-content">
+          <nav className={`menu-content transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
             <div className="menu-bg">
               <div className="backdrop-layer first"></div>
               <div className="backdrop-layer second"></div>
@@ -260,36 +132,34 @@ export function KineticNavigation() {
 
             <div className="menu-content-wrapper">
               <ul className="menu-list">
-                <li className="menu-list-item" data-shape="1">
-                  <Link href="#features" className="nav-link w-inline-block" onClick={closeMenu}>
+                <li className="menu-list-item transition-opacity duration-300" onMouseEnter={() => setActiveShape('1')} onMouseLeave={() => setActiveShape(null)}>
+                  <Link href="#features" className="nav-link w-inline-block group" onClick={closeMenu}>
                     <p className="nav-link-text">Features</p>
-                    <div className="nav-link-hover-bg"></div>
+                    <div className="nav-link-hover-bg group-hover:opacity-15"></div>
                   </Link>
                 </li>
-                <li className="menu-list-item" data-shape="2">
-                  <Link href="#pricing" className="nav-link w-inline-block" onClick={closeMenu}>
+                <li className="menu-list-item transition-opacity duration-300" onMouseEnter={() => setActiveShape('2')} onMouseLeave={() => setActiveShape(null)}>
+                  <Link href="#pricing" className="nav-link w-inline-block group" onClick={closeMenu}>
                     <p className="nav-link-text">Pricing</p>
-                    <div className="nav-link-hover-bg"></div>
+                    <div className="nav-link-hover-bg group-hover:opacity-15"></div>
                   </Link>
                 </li>
-                <li className="menu-list-item" data-shape="3">
-                  <Link href="#about" className="nav-link w-inline-block" onClick={closeMenu}>
+                <li className="menu-list-item transition-opacity duration-300" onMouseEnter={() => setActiveShape('3')} onMouseLeave={() => setActiveShape(null)}>
+                  <Link href="#about" className="nav-link w-inline-block group" onClick={closeMenu}>
                     <p className="nav-link-text">About</p>
-                    <div className="nav-link-hover-bg"></div>
+                    <div className="nav-link-hover-bg group-hover:opacity-15"></div>
                   </Link>
                 </li>
-                <li className="menu-list-item" data-shape="4">
-                  <Link href="/contact" className="nav-link w-inline-block" onClick={closeMenu}>
-                    <p className="nav-link-text" data-menu-fade>
-                      Contact
-                    </p>
-                    <div className="nav-link-hover-bg"></div>
+                <li className="menu-list-item transition-opacity duration-300" onMouseEnter={() => setActiveShape('4')} onMouseLeave={() => setActiveShape(null)}>
+                  <Link href="/contact" className="nav-link w-inline-block group" onClick={closeMenu}>
+                    <p className="nav-link-text">Contact</p>
+                    <div className="nav-link-hover-bg group-hover:opacity-15"></div>
                   </Link>
                 </li>
-                <li className="menu-list-item" data-shape="5">
-                  <Link href="/" className="nav-link w-inline-block" onClick={closeMenu}>
+                <li className="menu-list-item transition-opacity duration-300" onMouseEnter={() => setActiveShape('5')} onMouseLeave={() => setActiveShape(null)}>
+                  <Link href="/" className="nav-link w-inline-block group" onClick={closeMenu}>
                     <p className="nav-link-text">Home</p>
-                    <div className="nav-link-hover-bg"></div>
+                    <div className="nav-link-hover-bg group-hover:opacity-15"></div>
                   </Link>
                 </li>
               </ul>
