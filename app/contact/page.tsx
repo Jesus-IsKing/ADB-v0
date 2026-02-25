@@ -163,12 +163,12 @@ export default function ContactPage() {
                   a: 'We offer flexible weekly, bi-weekly, and monthly rental plans starting at competitive rates. Payment can be made monthly or annually (with a 10% discount). Invoices are sent via email, and we accept all major payment methods for your convenience.',
                 },
                 {
-                  q: 'Can I upgrade or downgrade my plan?',
-                  a: 'Absolutely! You can adjust your plan anytime based on your needs. Changes take effect at the start of your next billing cycle, and we'll prorate any adjustments fairly.',
+                  q: "Can I upgrade or downgrade my plan?",
+                  a: "Absolutely! You can adjust your plan anytime based on your needs. Changes take effect at the start of your next billing cycle, and we'll prorate any adjustments fairly.",
                 },
                 {
-                  q: 'What if I need to cancel?',
-                  a: 'You can cancel anytime with 7 days written notice. There are no hidden fees or long-term contracts required. We offer month-to-month flexibility so you\'re never locked in.',
+                  q: "What if I need to cancel?",
+                  a: "You can cancel anytime with 7 days written notice. There are no hidden fees or long-term contracts required. We offer month-to-month flexibility so you're never locked in.",
                 },
                 {
                   q: 'What facilities and amenities are included?',
@@ -179,12 +179,12 @@ export default function ContactPage() {
                   a: 'Basic supplies like disinfectant and cleaning materials are included. You bring your own tools and products. Premium supplies (towels, capes, etc.) can be purchased monthly or you can provide your own. High-quality chairs and stations are fully maintained by us.',
                 },
                 {
-                  q: 'What happens if there\'s damage to the chair or station?',
-                  a: 'Renters are responsible for normal wear and tear. Significant damage is covered by your liability insurance. We require professional insurance before rental begins. Minor issues are handled with goodwill; major damage is addressed through your insurance.',
+                  q: "What happens if there's damage to the chair or station?",
+                  a: "Renters are responsible for normal wear and tear. Significant damage is covered by your liability insurance. We require professional insurance before rental begins. Minor issues are handled with goodwill; major damage is addressed through your insurance.",
                 },
                 {
-                  q: 'Do you offer liability insurance?',
-                  a: 'You must carry your own professional liability insurance (typically $1-2M coverage). We recommend policies that cover chair rental. If you don\'t have insurance, we can provide referrals to affordable providers who specialize in salon professionals.',
+                  q: "Do you offer liability insurance?",
+                  a: "You must carry your own professional liability insurance (typically $1-2M coverage). We recommend policies that cover chair rental. If you don't have insurance, we can provide referrals to affordable providers who specialize in salon professionals.",
                 },
                 {
                   q: 'What are the hours of operation?',
