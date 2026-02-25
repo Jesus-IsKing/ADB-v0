@@ -1,17 +1,28 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Mesh, Group } from 'three';
 import { Environment, Html } from '@react-three/drei';
+
+// Suppress THREE.Clock deprecation warning
+if (typeof window !== 'undefined') {
+  const originalWarn = console.warn;
+  console.warn = function(...args: any[]) {
+    if (args[0]?.includes?.('THREE.Clock')) {
+      return;
+    }
+    originalWarn.apply(console, args);
+  };
+}
 
 // 3D Chair Component
 function RotatingChair() {
   const groupRef = useRef<Group>(null);
 
-  useFrame(() => {
+  useFrame(({ delta }) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.005;
+      groupRef.current.rotation.y += 0.005 * (delta || 0.016);
     }
   });
 
@@ -77,10 +88,10 @@ function RotatingChair() {
 function FloatingParticles() {
   const particlesRef = useRef<Group>(null);
 
-  useFrame(() => {
+  useFrame(({ delta }) => {
     if (particlesRef.current) {
-      particlesRef.current.rotation.x += 0.0001;
-      particlesRef.current.rotation.y += 0.0002;
+      particlesRef.current.rotation.x += 0.0001 * (delta || 0.016);
+      particlesRef.current.rotation.y += 0.0002 * (delta || 0.016);
     }
   });
 
@@ -113,6 +124,8 @@ export function Chair3DScene() {
       <Canvas
         camera={{ position: [0, 1, 3], fov: 45 }}
         style={{ background: 'transparent' }}
+        gl={{ antialias: true, alpha: true }}
+        dpr={typeof window !== 'undefined' ? window.devicePixelRatio : 1}
       >
         {/* Lighting */}
         <ambientLight intensity={0.5} color="#ffffff" />
