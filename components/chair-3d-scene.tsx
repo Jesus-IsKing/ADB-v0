@@ -119,6 +119,16 @@ function FloatingParticles() {
 }
 
 export function Chair3DScene() {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="w-full h-full min-h-[500px]" />;
+  }
+
   return (
     <div className="w-full h-full min-h-[500px]">
       <Canvas

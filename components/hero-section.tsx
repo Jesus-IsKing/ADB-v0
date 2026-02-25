@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import { ButtonCTA } from './button-cta';
 import { Chair3DScene } from './chair-3d-scene';
@@ -9,12 +10,20 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
+  const [show3D, setShow3D] = React.useState(false);
+
+  React.useEffect(() => {
+    setShow3D(true);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* 3D Chair Background */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <Chair3DScene />
-      </div>
+      {show3D && (
+        <div className="absolute inset-0 z-0 opacity-40">
+          <Chair3DScene />
+        </div>
+      )}
 
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background pointer-events-none z-10" />
