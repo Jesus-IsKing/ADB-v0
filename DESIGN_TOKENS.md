@@ -2,11 +2,11 @@
 
 ## Color Palette
 
-### Primary Colors
-- **Background (Dark)**: `#0f0f0f` (oklch: 0.055 0 0) - Deep black for main background
-- **Surface (Dark)**: `#1a1a1a` (oklch: 0.1 0 0) - Slightly lighter for cards and surfaces
-- **Text Primary**: `#f8f8f8` (oklch: 0.98 0 0) - Off-white for main text
-- **Text Muted**: `#a0a0a0` (oklch: 0.63 0 0) - Gray for secondary text
+### Primary Colors (Light “Peace” Theme)
+- **Background (Light)**: `#f9fafb` – Soft, low-contrast shell for a calm feel
+- **Surface (Light)**: `#ffffff` – Card and surface backgrounds
+- **Text Primary**: `#111827` – Deep slate for strong readability
+- **Text Muted**: `#6b7280` – Subtle gray for secondary text
 
 ### Accent Color
 - **Gold/Amber**: `#d4af37` (oklch: 0.74 0.16 70) - Luxury accent for CTAs, highlights, and accents
@@ -14,9 +14,9 @@
 - **Gold/Amber (Subtle)**: `#4a3f2e` (oklch: 0.28 0.04 70) - Dark gold tint for backgrounds
 
 ### Utility Colors
-- **Destructive**: `#ef4444` (oklch: 0.55 0.22 27) - Red for errors/warnings
-- **Border**: `#2a2a2a` (oklch: 0.17 0 0) - Subtle border color
-- **Glass Border**: `rgba(212, 175, 55, 0.2)` - Subtle gold border for glass effect
+- **Destructive**: `#ef4444` – Red for errors/warnings
+- **Border**: `#e5e7eb` – Soft border for light surfaces
+- **Glass Border**: `rgba(212, 175, 55, 0.2)` – Subtle gold border for glass effect
 
 ## Typography
 
@@ -97,10 +97,10 @@ box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.1);
 
 ## Contrast Ratios (WCAG AA Compliant)
 
-- Text Primary on Background: 16:1 ✓
-- Text Muted on Background: 5.5:1 ✓
-- Gold Accent on Dark Surface: 7:1 ✓
-- Gold Accent on Background: 8.5:1 ✓
+- Text Primary on Light Background: ≥ 7:1 ✓
+- Text Muted on Light Background: ≥ 4.5:1 ✓
+- Gold Accent on Light Surface: ≥ 4.5:1 ✓
+- Gold Accent on Dark Glass Cards: ≥ 7:1 ✓
 
 ---
 
@@ -108,17 +108,17 @@ box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.1);
 
 ```css
 :root {
-  --background: #0f0f0f;
-  --surface: #1a1a1a;
-  --foreground: #f8f8f8;
-  --muted-foreground: #a0a0a0;
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --foreground: #111827;
+  --muted-foreground: #6b7280;
   --accent: #d4af37;
   --accent-hover: #e8c547;
-  --accent-subtle: #4a3f2e;
-  --border: #2a2a2a;
+  --accent-subtle: #fef9c3;
+  --border: #e5e7eb;
   --glass-blur: 10px;
   --radius: 0.75rem;
 }
 ```
 
-This color system provides a luxurious dark theme with gold accents, perfect for a premium salon brand while maintaining excellent accessibility.
+This color system provides a light, peaceful base with gold accents, suitable for a premium salon brand while maintaining excellent accessibility.

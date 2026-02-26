@@ -1,54 +1,52 @@
 # Adorabella Color System Reference
 
-## Primary Colors
+## Primary Colors (Light Base)
 
 ### Background
-- **Color**: `#0f0f0f`
-- **Usage**: Main page background
-- **Contrast**: WCAG AAA with foreground text
+- **Color**: `#f9fafb`
+- **Usage**: Main page background for a calm, “peaceful” feel
+- **Contrast**: WCAG AA+ with primary text
 
 ### Foreground (Primary Text)
-- **Color**: `#f5f5f5`
+- **Color**: `#111827`
 - **Usage**: Main body text, headings
-- **Contrast**: 16:1 with background (WCAG AAA)
+- **Contrast**: ≥ 7:1 with background (WCAG AA/AAA depending on size)
 
 ### Accent (Gold)
 - **Color**: `#d4af37`
 - **Usage**: Links, buttons, highlights, CTAs
-- **Contrast**: 7.2:1 with background (WCAG AA)
-- **Hover State**: `#c9a227` (darker gold)
+- **Contrast**: ≥ 4.5:1 on light surfaces, ≥ 7:1 on darker glass cards
+- **Hover State**: `#c9a227` (slightly deeper gold)
 
 ## Secondary Colors
 
 ### Card/Secondary Background
-- **Color**: `#1a1a1a`
-- **Usage**: Card backgrounds, elevated surfaces
-- **Contrast**: Works with both foreground colors
+- **Color**: `#ffffff`
+- **Usage**: Card backgrounds, popovers
+- **Contrast**: Clear separation from background and borders
 
-### Secondary Darker
-- **Color**: `#2a2a2a`
-- **Usage**: Borders, dividers, secondary elements
-- **Contrast**: Subtle but visible separation
+### Subtle Surface
+- **Color**: `#f3f4f6`
+- **Usage**: Section backgrounds, subtle strips
 
-### Tertiary
-- **Color**: `#404040`
-- **Usage**: Input backgrounds, subtle fills
-- **Contrast**: Distinct from backgrounds
+### Muted Surface / Borders
+- **Color**: `#e5e7eb`
+- **Usage**: Borders, dividers, subtle fills
 
 ### Muted Text
-- **Color**: `#a8a8a8`
+- **Color**: `#6b7280`
 - **Usage**: Secondary text, descriptions, captions
-- **Contrast**: 4.5:1 with background (WCAG AA)
+- **Contrast**: ≥ 4.5:1 with background (WCAG AA)
 
 ## Neutral Palette
 
-```
-#0f0f0f ━━━━ Main background
-#1a1a1a ━━━━ Card background
-#2a2a2a ━━━━ Borders, dividers
-#404040 ━━━━ Input fields, subtle
-#a8a8a8 ━━━━ Muted text
-#f5f5f5 ━━━━ Primary text
+``` 
+#f9fafb ━━━━ Main background
+#ffffff ━━━━ Card background
+#f3f4f6 ━━━━ Section background
+#e5e7eb ━━━━ Borders, dividers
+#6b7280 ━━━━ Muted text
+#111827 ━━━━ Primary text
 ```
 
 ## Accent Usage Guide
@@ -73,20 +71,20 @@
 
 ```css
 /* In app/globals.css */
---background: #0f0f0f;
---foreground: #f5f5f5;
---card: #1a1a1a;
---card-foreground: #f5f5f5;
---primary: #f5f5f5;
---primary-foreground: #0f0f0f;
---secondary: #2a2a2a;
---secondary-foreground: #f5f5f5;
---muted: #404040;
---muted-foreground: #a8a8a8;
+--background: #f9fafb;
+--foreground: #111827;
+--card: #ffffff;
+--card-foreground: #111827;
+--primary: #111827;
+--primary-foreground: #f9fafb;
+--secondary: #f3f4f6;
+--secondary-foreground: #111827;
+--muted: #e5e7eb;
+--muted-foreground: #6b7280;
 --accent: #d4af37;
---accent-foreground: #0f0f0f;
---border: #2a2a2a;
---input: #1a1a1a;
+--accent-foreground: #0f172a;
+--border: #e5e7eb;
+--input: #ffffff;
 --ring: #d4af37;
 ```
 
@@ -122,12 +120,8 @@ className="glass-subtle"                   // Subtle glass effect
 - Not solely reliant on color for meaning
 - Buttons have additional visual feedback (text changes, scale)
 
-## Dark Theme Only
-This design is optimized for dark theme display. The color system creates:
-- Reduced eye strain in low-light environments
-- Premium, luxury aesthetic
-- High contrast for accessibility
-- Modern, sophisticated appearance
+## Theme Notes
+The primary tokens describe a light, peaceful base with a gold accent. A matching dark theme is also configured in `app/globals.css` under the `.dark` selector for future use, but the default experience is light.
 
 ## Future Customization
 

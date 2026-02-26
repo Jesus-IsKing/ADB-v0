@@ -1,16 +1,26 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ContactForm } from '@/components/contact-form';
 import { ButtonCTA } from '@/components/button-cta';
+import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { ModalCTA } from '@/components/modal-cta';
 import { ModalReasons } from '@/components/modal-reasons';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export default function ContactPage() {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [showReasonsModal, setShowReasonsModal] = useState(false);
+
+  const scrollToContactSection = useCallback(() => {
+    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -18,27 +28,9 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header with Navigation */}
-      <header className="fixed top-0 w-full z-50 glass-gold">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:h-20">
-            <Link
-              href="/"
-              className="text-2xl font-bold text-accent hover:text-[#c9a227] transition-colors"
-            >
-              Adorabella
-            </Link>
-            <Link
-              href="/"
-              className="text-foreground hover:text-accent transition-colors font-medium"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar onCTAClick={scrollToContactSection} />
 
-      <main className="w-full pt-20 md:pt-24">
+      <main className="w-full pt-16 md:pt-20">
         {/* Hero Section */}
         <section className="w-full py-16 md:py-24 bg-gradient-to-b from-accent/5 via-transparent to-background border-b border-border">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 animate-slideUp">
@@ -135,7 +127,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <div className="lg:col-span-2 glass-gold p-8 rounded-lg">
+              <div id="contact-section" className="lg:col-span-2 glass-gold p-8 rounded-lg scroll-mt-24">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   Send us a <span className="text-accent">Message</span>
                 </h2>
@@ -152,7 +144,11 @@ export default function ContactPage() {
               Frequently Asked <span className="text-accent">Questions</span>
             </h2>
 
-            <div className="space-y-4">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full space-y-3"
+            >
               {[
                 {
                   q: 'What are the rental requirements?',
@@ -203,29 +199,30 @@ export default function ContactPage() {
                   a: 'Yes! Renewals are automatic unless you provide 7 days notice of cancellation. Extending your rental or moving to a different plan is as simple as contacting our team. Loyal renters receive priority support and exclusive offers.',
                 },
               ].map((faq, idx) => (
-                <div
-                  key={idx}
-                  className="glass-gold p-6 rounded-lg animate-slideUp"
+                <AccordionItem
+                  key={faq.q}
+                  value={`faq-${idx}`}
+                  className="glass-gold border-none rounded-lg animate-slideUp"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <AccordionTrigger className="text-left text-base sm:text-lg font-bold text-foreground">
                     {faq.q}
-                  </h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
-                </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-muted-foreground">{faq.a}</p>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
 
             {/* CTA */}
             <div className="text-center mt-12 space-y-4 animate-slideUp">
               <p className="text-muted-foreground">
                 Still have questions? We're here to help!
               </p>
-              <a href="#contact-section">
-                <ButtonCTA size="lg">
-                  Get in Touch
-                </ButtonCTA>
-              </a>
+              <ButtonCTA size="lg" onClick={scrollToContactSection}>
+                Get in Touch
+              </ButtonCTA>
             </div>
           </div>
         </section>
@@ -259,14 +256,9 @@ export default function ContactPage() {
         </section>
       </main>
 
-      {/* Full Footer Component */}
-      <Footer 
-        onCTAClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onBackToTop={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+      <Footer
+        onCTAClick={scrollToContactSection}
+        onBackToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
 
       {/* Modals */}

@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/hero-section';
 import { FeaturesSection } from '@/components/features-section';
+import { HowItWorksSection } from '@/components/how-it-works-section';
 import { PricingSection } from '@/components/pricing-section';
 import { OwnerSection } from '@/components/owner-section';
 import { Footer } from '@/components/footer';
@@ -12,6 +13,14 @@ import { ModalCTA } from '@/components/modal-cta';
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
 
   const handleBackToTop = () => {
     topRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -23,6 +32,7 @@ export default function Home() {
 
       <main className="w-full pt-16 md:pt-20">
         <HeroSection onCTAClick={() => setIsModalOpen(true)} />
+        <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
         <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
         <PricingSection onCTAClick={() => setIsModalOpen(true)} />
         <OwnerSection onCTAClick={() => setIsModalOpen(true)} />

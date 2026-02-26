@@ -8,19 +8,18 @@ interface FooterProps {
   onBackToTop?: () => void;
 }
 
+const navLinks = [
+  { label: 'Features', href: '/#features' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/contact' },
+] as const;
+
 export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
-    { label: 'Features', href: '#features' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Privacy', href: '#' },
-  ];
-
   return (
-    <footer className="w-full bg-secondary border-t border-border">
+    <footer className="w-full bg-secondary border-t border-border" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -31,14 +30,14 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Navigation - works from home and contact */}
           <div className="space-y-3">
             <h4 className="font-bold text-foreground">Navigation</h4>
-            {footerLinks.slice(0, 3).map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="block text-muted-foreground hover:text-accent transition-colors"
+                className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
               >
                 {link.label}
               </Link>
@@ -49,25 +48,20 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           <div className="space-y-3">
             <h4 className="font-bold text-foreground">Support</h4>
             <Link
-              href="/contact?scroll=top"
-              onClick={() => {
-                setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
-              }}
-              className="block text-muted-foreground hover:text-accent transition-colors"
+              href="/contact"
+              className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
               Contact Us
             </Link>
             <a
               href="mailto:info@adorabella.com"
-              className="block text-muted-foreground hover:text-accent transition-colors"
+              className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
               Email Support
             </a>
             <a
               href="tel:+1234567890"
-              className="block text-muted-foreground hover:text-accent transition-colors"
+              className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
               Call Us
             </a>
@@ -96,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           </p>
           <button
             onClick={onBackToTop}
-            className="text-accent hover:text-[#c9a227] transition-colors font-medium flex items-center gap-2"
+            className="text-accent hover:text-[#c9a227] transition-colors font-medium flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             aria-label="Back to top"
           >
             Back to Top

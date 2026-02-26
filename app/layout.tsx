@@ -58,14 +58,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <SEOSchema />
-        <meta name="theme-color" content="#0f0f0f" />
+        <meta name="theme-color" content="#f9fafb" />
       </head>
-      <body className="font-sans antialiased dark">
+      <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          forcedTheme="dark"
+          defaultTheme="light"
+          enableSystem
         >
           {children}
           <Toaster />

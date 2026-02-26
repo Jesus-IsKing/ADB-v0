@@ -18,30 +18,52 @@ Use the checkboxes to track progress as you work.
 
 ---
 
+## Status at a glance — completed vs not yet on site
+
+Use this section to see what is already shipped and what remains. The detailed checkboxes below stay the source of truth; this summary is for prioritization and handoffs.
+
+**Completed (on site)**  
+- **§1 Navigation & flow** — Nav and footer unified across home and contact; all anchors and hash links fixed; primary conversion path aligned (Inquire Now → modal on home, scroll-to-form on contact). *Remaining:* one manual item — full user journey walkthrough (desktop + mobile).
+
+**Not yet on site (recommended order)**  
+- **§2 Hero & visual design** — CTA label alignment, hero hierarchy (mobile/desktop), scroll indicator made actionable.  
+- **§3 Features, pricing, story** — Icon language, pricing scannability, stat repetition and story tightening.  
+- **§4 Contact & conversion** — Conversion hub definition, FAQ structure/readability, form feedback and trust.  
+- **§5 Accessibility & UX polish** — Modal focus/trap/ARIA, motion calibration and reduced-motion, contrast and focus visibility.  
+- **§6 Performance & responsiveness** — Mobile 3D impact, scroll and animation performance.  
+- **§7 Final QA** — Full journey tests, CTA consistency, accessibility and branding cohesion.
+
+**Notes**  
+- Do §2 → §3 → §4 for maximum user-facing impact before deep polish.  
+- Do §5 before §6 so accessibility isn’t regressed by performance changes.  
+- Re-run the §7 checklist after each major batch, not only at the end.
+
+---
+
 ## 1. Navigation & Flow
 
 ### 1.1 Fix nav items, anchors, and broken links
 
-- [ ] Ensure all navbar items navigate somewhere meaningful
-  - [ ] Confirm "Features", "Pricing", and "About" scroll correctly on the home page
-  - [ ] Ensure "Contact" reliably navigates to the contact experience (either a section or the contact page)
-- [ ] Make sure every `#anchor` used in links has a corresponding element `id` in the DOM
-- [ ] Fix `#contact-section` (or rename it) so that contact-page CTAs scroll correctly
-- [ ] Verify that clicking nav items from any page (home/contact) behaves predictably
+- [x] Ensure all navbar items navigate somewhere meaningful
+  - [x] Confirm "Features", "Pricing", and "About" scroll correctly on the home page
+  - [x] Ensure "Contact" reliably navigates to the contact experience (either a section or the contact page)
+- [x] Make sure every `#anchor` used in links has a corresponding element `id` in the DOM
+- [x] Fix `#contact-section` (or rename it) so that contact-page CTAs scroll correctly
+- [x] Verify that clicking nav items from any page (home/contact) behaves predictably
 
 ### 1.2 Unify header and footer behavior across pages
 
-- [ ] Reuse a consistent navbar (or a styled variant) on the contact page
-- [ ] Confirm logo click behavior is consistent (e.g., always returns to the home hero)
-- [ ] Ensure footer links behave correctly:
-  - [ ] "Features", "Pricing", and "About" work from both home and contact pages
-  - [ ] "Contact" and "Contact Us" routes users to the same core flow
+- [x] Reuse a consistent navbar (or a styled variant) on the contact page
+- [x] Confirm logo click behavior is consistent (e.g., always returns to the home hero)
+- [x] Ensure footer links behave correctly:
+  - [x] "Features", "Pricing", and "About" work from both home and contact pages
+  - [x] "Contact" and "Contact Us" routes users to the same core flow
 
 ### 1.3 Clarify the primary conversion path
 
-- [ ] Choose a single primary conversion path (e.g., "Start your application" leading to the contact page)
-- [ ] Align the main nav CTA ("Inquire Now") with that path
-- [ ] Ensure the hero CTAs, pricing CTAs, and footer CTAs point to that same primary path (or to clearly labeled secondary actions)
+- [x] Choose a single primary conversion path (e.g., "Start your application" leading to the contact page)
+- [x] Align the main nav CTA ("Inquire Now") with that path
+- [x] Ensure the hero CTAs, pricing CTAs, and footer CTAs point to that same primary path (or to clearly labeled secondary actions)
 - [ ] Walk through a complete user journey on desktop and mobile to confirm it feels linear and intentional
 
 ---
