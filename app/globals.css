@@ -75,8 +75,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-sans), 'Geist', sans-serif;
+  --font-serif: var(--font-serif), 'Cormorant Garamond', serif;
+  --font-mono: var(--font-mono), 'Geist Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,33 +120,118 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
 @layer components {
-  /* Glass Effect Styles */
+
+  /* Noise Overlay */
+  .noise-overlay {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+    animation: grain 8s steps(10) infinite;
+  }
+
+  /* Glass Effect Styles - Thinner borders for premium look */
   .glass {
-    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-lg;
+    @apply backdrop-blur-xl bg-white/5 border border-white/5 rounded-2xl;
   }
 
   .glass-gold {
-    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-lg shadow-lg;
-    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1), 0 0 20px rgba(212, 175, 55, 0.05);
-    border-color: rgba(212, 175, 55, 0.2);
+    @apply backdrop-blur-xl bg-white/5 border border-accent/20 rounded-2xl shadow-2xl;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.05), 0 0 40px rgba(212, 175, 55, 0.03);
   }
 
   .glass-subtle {
-    @apply backdrop-blur-sm bg-white/3 border border-white/5 rounded-lg;
+    @apply backdrop-blur-md bg-white/3 border border-white/5 rounded-2xl;
+  }
+
+  /* Aura Blobs */
+  .aura-blob {
+    @apply absolute blur-[120px] opacity-30 mix-blend-soft-light pointer-events-none;
+    animation: move-aura 20s ease-in-out infinite;
   }
 
   /* Smooth animations */
+  @keyframes move-aura {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes grain {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    10% {
+      transform: translate(-5%, -10%);
+    }
+
+    20% {
+      transform: translate(-15%, 5%);
+    }
+
+    30% {
+      transform: translate(7%, -25%);
+    }
+
+    40% {
+      transform: translate(-5%, 25%);
+    }
+
+    50% {
+      transform: translate(-15%, 10%);
+    }
+
+    60% {
+      transform: translate(15%, 0%);
+    }
+
+    70% {
+      transform: translate(0%, 15%);
+    }
+
+    80% {
+      transform: translate(3%, 35%);
+    }
+
+    90% {
+      transform: translate(-10%, 10%);
+    }
+  }
+
   @keyframes slideUp {
     from {
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -156,6 +242,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -166,6 +253,7 @@
       opacity: 0;
       transform: translateX(-20px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -177,6 +265,7 @@
       opacity: 0;
       transform: translateX(20px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -184,9 +273,12 @@
   }
 
   @keyframes glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
+
     50% {
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
@@ -213,8 +305,16 @@
   }
 
   /* Text utilities */
+  .font-serif {
+    font-family: var(--font-serif), serif;
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-luxury {
+    @apply font-serif tracking-tight leading-[1.1];
   }
 
   /* Gold accent utilities */
@@ -241,21 +341,23 @@
   /* Fluid font size: min 2rem (320px) → preferred scales with viewport → max 4.5rem (1440px+).
    * Line height and letter-spacing keep the name readable and elegant. */
   .hero-business-name {
-    font-size: clamp(2rem, 5vw + 1.5rem, 4.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    font-weight: 600;
+    font-size: clamp(3rem, 12vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 500;
     color: var(--foreground);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    /* Ensures name stays readable over dithering or background imagery */
+    font-family: var(--font-serif);
   }
 
   /* Tagline: clearly subordinate to the business name; fluid but smaller. */
   .hero-tagline {
-    font-size: clamp(1rem, 2vw + 0.75rem, 1.5rem);
+    font-size: clamp(0.75rem, 2vw, 1.1rem);
     line-height: 1.4;
-    color: var(--muted-foreground);
-    font-weight: 400;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
     max-width: 28em;
     margin-left: auto;
     margin-right: auto;

@@ -9,6 +9,10 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
+  const scrollToLookbook = () => {
+    document.getElementById('lookbook')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const scrollToFeatures = () => {
     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -19,19 +23,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       <AnnouncementBanner />
 
       <HeroDitheringCard
-        badge="Premium Salon Rentals"
+        badge="Private Boutique Portfolio"
         businessName="Adorabella Salon"
-        tagline="Premium Chair Rentals for Beauty Professionals"
-        description="Start your salon business with Adorabella. Flexible terms, premium facilities, and dedicated support to help you thrive."
-        primaryCtaText="Get Started Today"
-        secondaryCtaText="Learn More"
+        tagline="Artistry in Precision & Restoration"
+        description="A private sanctuary for master hair artistry. We are currently nearly fully booked and operating via a private waitlist. Explore our portfolio of geometric precision cutting and restorative color transformations."
+        primaryCtaText="View Our Portfolio"
+        secondaryCtaText="Join the Private Waitlist"
         secondaryCtaHref="/contact"
-        onPrimaryCtaClick={onCTAClick}
-        onScrollIndicatorClick={scrollToFeatures}
+        onPrimaryCtaClick={scrollToLookbook}
+        onScrollIndicatorClick={scrollToLookbook}
         stats={[
-          { value: '50+', label: 'Beauty Professionals' },
-          { value: '100%', label: 'Satisfaction Rate' },
-          { value: '24/7', label: 'Support Available' },
+          { value: '15+', label: 'Years of Artistry' },
+          { value: 'Fully', label: 'Booked Boutique' },
+          { value: 'Cell', label: 'Direct Access' },
         ]}
         minHeight="min-h-[75vh] md:min-h-[80vh]"
       />

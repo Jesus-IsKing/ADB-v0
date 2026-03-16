@@ -3,12 +3,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/hero-section';
+import { LookbookSection } from '@/components/lookbook-section';
 import { FeaturesSection } from '@/components/features-section';
 import { HowItWorksSection } from '@/components/how-it-works-section';
 import { PricingSection } from '@/components/pricing-section';
 import { OwnerSection } from '@/components/owner-section';
 import { Footer } from '@/components/footer';
 import { ModalCTA } from '@/components/modal-cta';
+import { Reveal } from '@/components/ui/reveal';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,11 +34,26 @@ export default function Home() {
 
       <main className="w-full pt-16 md:pt-20">
         <HeroSection onCTAClick={() => setIsModalOpen(true)} />
-        <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
-        <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
-        <PricingSection onCTAClick={() => setIsModalOpen(true)} />
-        <OwnerSection onCTAClick={() => setIsModalOpen(true)} />
+
+        <LookbookSection />
+
+        <Reveal delay={0.1}>
+          <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <PricingSection onCTAClick={() => setIsModalOpen(true)} />
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <OwnerSection onCTAClick={() => setIsModalOpen(true)} />
+        </Reveal>
       </main>
+
 
       <Footer
         onCTAClick={() => setIsModalOpen(true)}

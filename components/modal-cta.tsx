@@ -10,15 +10,21 @@ interface ModalCTAProps {
 
 export const ModalCTA: React.FC<ModalCTAProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleEscape);
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleEscape);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -51,74 +57,47 @@ export const ModalCTA: React.FC<ModalCTAProps> = ({ isOpen, onClose }) => {
         </button>
 
         {/* Content */}
-        <div className="space-y-4">
+        <div className="space-y-4 text-center">
           <h2 className="text-2xl font-bold text-foreground">
-            Start Your <span className="text-accent">Journey</span> Today
+            Connect with <span className="text-accent">Natalie</span>
           </h2>
-          <p className="text-muted-foreground">
-            Ready to join Adorabella? Reach out to us and let's discuss which plan is perfect for you.
+          <p className="text-muted-foreground leading-relaxed">
+            While we are currently <span className="text-accent">nearly fully booked</span>, Natalie is always happy to hear from you. Feel free to reach out via call or text to discuss your hair goals or join the private waitlist.
           </p>
         </div>
 
         {/* Contact Info */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <svg
-              className="w-5 h-5 text-accent flex-shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.02.04.039.082.059.125 1.476 2.955 3.728 5.207 6.683 6.683.043.02.085.038.125.059l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-            </svg>
-            <a
-              href="tel:+1234567890"
-              className="text-foreground hover:text-accent transition-colors font-medium"
-            >
-              (123) 456-7890
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg
-              className="w-5 h-5 text-accent flex-shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-            </svg>
-            <a
-              href="mailto:info@adorabella.com"
-              className="text-foreground hover:text-accent transition-colors font-medium"
-            >
-              info@adorabella.com
-            </a>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="space-y-3 pt-4 border-t border-white/10">
+        <div className="space-y-4 pt-4">
           <ButtonCTA
-            href="/contact"
+            href="tel:5096794206"
             variant="primary"
-            className="w-full"
-            onClick={() => onClose()}
+            className="w-full h-14 text-lg"
           >
-            Contact Us
+            <div className="flex items-center justify-center gap-3">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.02.04.039.082.059.125 1.476 2.955 3.728 5.207 6.683 6.683.043.02.085.038.125.059l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              Call 509-679-4206
+            </div>
           </ButtonCTA>
+
           <ButtonCTA
+            href="sms:5096794206"
             variant="secondary"
-            className="w-full"
-            onClick={onClose}
+            className="w-full h-14 text-lg border-2 border-accent text-accent bg-transparent hover:bg-accent/10"
           >
-            Maybe Later
+            <div className="flex items-center justify-center gap-3">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm4 0H9v2h2V9zm2 2h2V9h-2v2z" clipRule="evenodd" />
+              </svg>
+              Text Message
+            </div>
           </ButtonCTA>
         </div>
 
-        {/* Trust Badge */}
-        <div className="text-center text-sm text-muted-foreground">
-          <p>
-            <span className="text-accent">24/7</span> Response Guarantee
-          </p>
+        {/* Closing Info */}
+        <div className="text-center text-sm text-muted-foreground pt-4">
+          <p>Direct inquiries handled with premium care.</p>
         </div>
       </div>
     </div>

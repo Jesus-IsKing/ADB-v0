@@ -9,18 +9,18 @@ interface HowItWorksSectionProps {
 const STEPS = [
   {
     number: '01',
-    title: 'Tell us about your practice',
-    body: 'Share a few details about your services, schedule, and what you are looking for in a premium chair rental.',
+    title: 'Consultation & Discovery',
+    body: 'We begin with a personal consultation to understand your hair and beauty goals, ensuring a tailored experience.',
   },
   {
     number: '02',
-    title: 'Tour the Adorabella space',
-    body: 'We walk you through our salon, amenities, and available chairs so you can feel the space before you commit.',
+    title: 'Expert Service',
+    body: 'Sit back and relax in our premium salon environment while our master stylists bring your vision to life.',
   },
   {
     number: '03',
-    title: 'Choose your chair & start',
-    body: 'Pick the chair and plan that fits your business, sign a simple agreement, and start seeing clients right away.',
+    title: 'Signature Finish',
+    body: 'Leave feeling vibrant and confident. We provide expert advice and products to help you maintain your look at home.',
   },
 ];
 
@@ -33,14 +33,14 @@ export function HowItWorksSection({ onCTAClick }: HowItWorksSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <p className="text-sm font-medium tracking-wide uppercase text-accent mb-3">
-            Simple, calm onboarding
+            Your Hair Journey
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-balance mb-4">
-            How Adorabella&nbsp;<span className="text-accent">works</span>
+            How Adorabella <span className="text-accent">Experience</span> Works
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg">
-            A three-step path from first conversation to your first client in the chair—
-            designed to feel clear, predictable, and stress-free.
+            A curated three-step journey from your initial vision to stepping out
+            of our doors feeling like your best self.
           </p>
         </div>
 
@@ -69,10 +69,10 @@ export function HowItWorksSection({ onCTAClick }: HowItWorksSectionProps) {
 
         <div className="mt-10 md:mt-12 flex flex-col items-center gap-3 text-center">
           <p className="text-sm text-muted-foreground">
-            Ready to see if Adorabella is a fit?
+            Ready for your transformation?
           </p>
           <ButtonCTA size="md" onClick={onCTAClick}>
-            Walk me through the next step
+            Request Private Consult
           </ButtonCTA>
         </div>
       </div>

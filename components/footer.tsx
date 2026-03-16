@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { ButtonCTA } from './button-cta';
 
@@ -9,8 +10,9 @@ interface FooterProps {
 }
 
 const navLinks = [
-  { label: 'Features', href: '/#features' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Lookbook', href: '/#lookbook' },
+  { label: 'Services', href: '/#features' },
+  { label: 'Menu', href: '/#pricing' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/contact' },
 ] as const;
@@ -26,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-accent">Adorabella</h3>
             <p className="text-muted-foreground">
-              Premium chair rentals for beauty professionals.
+              Experience the art of premium beauty in a sanctuary of luxury.
             </p>
           </div>
 
@@ -51,34 +53,34 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
               href="/contact"
               className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
-              Contact Us
+              Contact Page
             </Link>
             <a
-              href="mailto:info@adorabella.com"
+              href="tel:5096794206"
               className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
-              Email Support
+              509-679-4206
             </a>
             <a
-              href="tel:+1234567890"
+              href="sms:5096794206"
               className="block text-muted-foreground hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-secondary rounded"
             >
-              Call Us
+              Send a Text
             </a>
           </div>
 
           {/* CTA */}
           <div className="space-y-4">
-            <h4 className="font-bold text-foreground">Get Started</h4>
+            <h4 className="font-bold text-foreground">Inquiries</h4>
             <p className="text-sm text-muted-foreground">
-              Ready to start your journey?
+              Directly handled by Natalie.
             </p>
             <ButtonCTA
               size="sm"
               onClick={onCTAClick}
               className="w-full"
             >
-              Inquire Now
+              Connect with Natalie
             </ButtonCTA>
           </div>
         </div>

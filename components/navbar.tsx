@@ -11,8 +11,9 @@ interface NavbarProps {
 }
 
 const menuItems = [
-  { label: 'Features', href: '#features', hash: true },
-  { label: 'Pricing', href: '#pricing', hash: true },
+  { label: 'Lookbook', href: '#lookbook', hash: true },
+  { label: 'Services', href: '#features', hash: true },
+  { label: 'Menu', href: '#pricing', hash: true },
   { label: 'About', href: '#about', hash: true },
   { label: 'Contact', href: '/contact', hash: false },
 ] as const;
@@ -69,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
             <ButtonCTA size="sm" onClick={onCTAClick}>
-              Inquire Now
+              Connect
             </ButtonCTA>
           </div>
 
@@ -135,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
                   }}
                   className="w-full"
                 >
-                  Inquire Now
+                  Connect
                 </ButtonCTA>
               </div>
             </div>

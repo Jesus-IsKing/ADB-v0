@@ -16,21 +16,21 @@ export function AnnouncementBanner() {
         <div className="flex flex-wrap gap-2 sm:justify-end">
           <HeroPill
             href="/contact"
-            label="Online appointment scheduling is temporarily unavailable."
+            label="Nearly fully booked — Text owner directly to inquire for openings."
             announcement="⚠️ Notice"
-            className="bg-primary/5"
+            className="bg-primary/5 border-accent/20"
           />
           <HeroPill
             href="/contact"
-            label="We do not accept walk-ins at this time (appointment-only)."
-            announcement="ℹ️ Info"
-            className="bg-primary/5"
+            label="Appointment only — We do not accept walk-ins."
+            announcement="🔒 Private"
+            className="bg-primary/5 border-accent/20"
           />
           <HeroPill
-            href="/contact#contact-section"
-            label="Two professional chairs available for licensed beauty professionals."
-            announcement="💺 Opportunity"
-            className="bg-primary/5"
+            href="tel:5096794206"
+            label="Direct Cell Access: 509-679-4206"
+            announcement="📱 Cell"
+            className="bg-primary/5 border-accent/20"
           />
         </div>
       </div>

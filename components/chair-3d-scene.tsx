@@ -8,7 +8,7 @@ import { Environment, Html } from '@react-three/drei';
 // Suppress THREE.Clock deprecation warning
 if (typeof window !== 'undefined') {
   const originalWarn = console.warn;
-  console.warn = function(...args: any[]) {
+  console.warn = function (...args: any[]) {
     if (args[0]?.includes?.('THREE.Clock')) {
       return;
     }
@@ -20,7 +20,7 @@ if (typeof window !== 'undefined') {
 function RotatingChair() {
   const groupRef = useRef<Group>(null);
 
-  useFrame(({ delta }) => {
+  useFrame((_, delta) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.005 * (delta || 0.016);
     }
@@ -69,8 +69,8 @@ function RotatingChair() {
         [-0.4, -0.15, 0.4],
         [0.4, -0.15, 0.4],
       ].map((pos, idx) => (
-        <mesh key={idx} position={pos as [number, number, number]}>
-          <cylinderGeometry args={[0.2, 0.2, 0.1, 16]} rotation={[Math.PI / 2, 0, 0]} />
+        <mesh key={idx} position={pos as [number, number, number]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.2, 0.2, 0.1, 16]} />
           <meshStandardMaterial color="#2a2a2a" metalness={0.4} roughness={0.6} />
         </mesh>
       ))}
@@ -88,7 +88,7 @@ function RotatingChair() {
 function FloatingParticles() {
   const particlesRef = useRef<Group>(null);
 
-  useFrame(({ delta }) => {
+  useFrame((_, delta) => {
     if (particlesRef.current) {
       particlesRef.current.rotation.x += 0.0001 * (delta || 0.016);
       particlesRef.current.rotation.y += 0.0002 * (delta || 0.016);

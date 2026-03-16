@@ -1,6 +1,8 @@
 'use client';
 
-import Image from 'next/image';
+import React from 'react';
+import { ParallaxImage } from './ui/parallax-image';
+import { Reveal } from './ui/reveal';
 import { ButtonCTA } from './button-cta';
 
 interface OwnerSectionProps {
@@ -11,61 +13,75 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
   return (
     <section
       id="about"
-      className="w-full py-20 md:py-32 bg-background border-t border-border"
+      className="w-full py-24 md:py-40 bg-background overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
-          <div className="animate-slideInLeft relative h-[400px] sm:h-[500px] lg:h-[600px]">
-            <Image
-              src="/natalie-owner.jpg"
-              alt="Natalie, Owner of Adorabella Premium Salon"
-              fill
-              className="object-cover rounded-xl shadow-2xl shadow-accent/20"
-            />
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-accent/30 to-transparent rounded-xl -z-10 blur-xl opacity-30" />
-          </div>
+          <Reveal>
+            <div className="relative h-[500px] sm:h-[600px] lg:h-[800px] rounded-[40px] overflow-hidden">
+              <ParallaxImage
+                src="/natalie-owner.jpg"
+                alt="Natalie, Owner of Adorabella Premium Salon"
+                speed={0.08}
+                className="h-full w-full"
+                showWatermark={true}
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[40px] pointer-events-none" />
+            </div>
+          </Reveal>
 
           {/* Content */}
-          <div className="animate-slideInRight space-y-6 md:space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-                Meet <span className="text-accent">Natalie</span>
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                With over 15 years of experience in the beauty industry, Natalie founded Adorabella to create the perfect environment for beauty professionals to thrive.
-              </p>
-            </div>
+          <div className="space-y-10 md:space-y-14">
+            <Reveal>
+              <div className="space-y-6">
+                <p className="text-sm font-bold tracking-[0.3em] uppercase text-accent">The Visionary</p>
+                <h2 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground tracking-tight leading-[0.9]">
+                  Meet <br /><span className="text-accent italic">Natalie</span>
+                </h2>
+                <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-lg">
+                  With over 15 years of excellence, Natalie founded Adorabella to create a sanctuary where high-end artistry meets clinical hair health.
+                </p>
+              </div>
+            </Reveal>
 
-            {/* Story */}
-            <div className="glass-gold p-6 space-y-4">
-              <p className="text-foreground leading-relaxed">
-                "I've been where you are. Starting out as an independent beauty professional, I understand the challenges of building your own space and growing your client base. That's why I created Adorabella – a sanctuary where talented professionals can focus on what they do best: creating beauty."
-              </p>
-              <p className="text-foreground leading-relaxed">
-                "Our mission is simple: provide premium facilities, flexible terms, and unwavering support so you can build the successful salon business you deserve."
-              </p>
-            </div>
+            {/* Quote Story */}
+            <Reveal delay={0.3}>
+              <div className="relative pl-12 border-l border-accent/30 py-4 italic space-y-6">
+                <p className="text-2xl font-serif font-light text-foreground/90 leading-relaxed">
+                  "My vision was to create a sanctuary where high-end artistry meets clinical hair health. Whether it's a transformation through geometric precision cutting or reviving color-damaged hair, we focus on the integrity of your look."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="h-px w-8 bg-accent" />
+                  <p className="text-sm font-bold tracking-widest uppercase text-accent">Founder & Master Stylist</p>
+                </div>
+              </div>
+            </Reveal>
 
             {/* Highlights */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass p-4 text-center">
-                <p className="text-2xl font-bold text-accent">15+</p>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
+            <Reveal delay={0.4}>
+              <div className="grid grid-cols-2 gap-8 pt-6">
+                <div className="space-y-1">
+                  <p className="text-4xl font-serif font-medium text-accent">15+</p>
+                  <p className="text-xs font-bold tracking-widest uppercase text-muted-foreground">Years Experience</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-4xl font-serif font-medium text-accent">10k+</p>
+                  <p className="text-xs font-bold tracking-widest uppercase text-muted-foreground">Happy Clients</p>
+                </div>
               </div>
-              <div className="glass p-4 text-center">
-                <p className="text-2xl font-bold text-accent">50+</p>
-                <p className="text-sm text-muted-foreground">Beauty Professionals</p>
-              </div>
-            </div>
+            </Reveal>
 
             {/* CTA */}
-            <ButtonCTA size="lg" onClick={onCTAClick}>
-              Join Our Community
-            </ButtonCTA>
+            <Reveal delay={0.5}>
+              <ButtonCTA size="lg" onClick={onCTAClick}>
+                Experience The Sanctuary
+              </ButtonCTA>
+            </Reveal>
           </div>
         </div>
       </div>
     </section>
   );
 };
+

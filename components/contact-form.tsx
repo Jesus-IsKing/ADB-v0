@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ButtonCTA } from './button-cta';
 
 export const ContactForm: React.FC = () => {
@@ -128,10 +128,10 @@ export const ContactForm: React.FC = () => {
           className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
         >
           <option value="">Select an option</option>
-          <option value="daily">Daily Pass</option>
-          <option value="weekly">Weekly Plan</option>
-          <option value="monthly">Monthly Premium</option>
-          <option value="consultation">Consultation</option>
+          <option value="cut-style">Precision Cut & Style</option>
+          <option value="color-artistry">Color & Highlights</option>
+          <option value="hair-repair">Restorative Hair Care</option>
+          <option value="consultation">General Consultation</option>
         </select>
       </div>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import { ButtonCTA } from './button-cta';
 
@@ -10,25 +11,25 @@ interface FeaturesSectionProps {
 export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) => {
   const features = [
     {
-      icon: '🎯',
-      title: 'Flexible Terms',
+      icon: '💇‍♀️',
+      title: 'Precision Cutting',
       description:
-        'Choose rental periods that fit your schedule. Monthly, weekly, or daily options available to suit your needs.',
-      image: '/feature-flexibility.jpg',
+        'Master the perfect silhouette with our geometric precision cutting techniques, tailored to your unique features and hair texture.',
+      image: '/feature-hair.jpg',
     },
     {
-      icon: '🤝',
-      title: 'Expert Support',
+      icon: '🎨',
+      title: 'Master Colorists',
       description:
-        'Dedicated support team available 24/7 to assist with any questions or needs you may have.',
-      image: '/feature-support.jpg',
+        'From high-dimension balayage to expert color correction, we utilize premium bond-builders to ensure vibrant, damage-free results.',
+      image: '/feature-color.jpg',
     },
     {
       icon: '✨',
-      title: 'Premium Facilities',
+      title: 'Restorative Care',
       description:
-        'Work in a luxurious, well-maintained salon environment designed for professional beauty services.',
-      image: '/feature-support.jpg',
+        'Revive stressed hair with elite clinical treatments like Olaplex and Kerastase, designed to repair bonds and restore natural shine.',
+      image: '/feature-events.jpg',
     },
   ];
 
@@ -39,12 +40,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 animate-slideUp">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Why Choose <span className="text-accent">Adorabella</span>
+        <div className="text-center mb-16 md:mb-24 animate-slideUp">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
+            Our Signature <span className="text-accent italic">Expertise</span>
           </h2>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We provide everything you need to succeed as a beauty professional
+            Where luxury meets artistry in every style.
           </p>
         </div>
 

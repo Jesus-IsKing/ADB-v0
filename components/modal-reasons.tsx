@@ -10,48 +10,54 @@ interface ModalReasonsProps {
 
 export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleEscape);
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleEscape);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   const reasons = [
     {
       icon: '✨',
-      title: 'Premium Facilities',
-      description: 'Work in a luxury salon environment with high-end equipment and professional aesthetics.',
+      title: 'Precision Artistry',
+      description: 'Experience the difference of geometric precision cutting tailored to your unique features.',
     },
     {
-      icon: '💰',
-      title: 'Flexible Pricing',
-      description: 'Choose the plan that works for you. No long-term contracts, cancel anytime.',
+      icon: '🏆',
+      title: 'Master Colorists',
+      description: 'Our team specializes in high-end coloring and meticulous color damage repair.',
     },
     {
-      icon: '🤝',
-      title: 'Community Support',
-      description: 'Join a thriving community of beauty professionals with networking opportunities.',
+      icon: '🧖‍♀️',
+      title: 'Restorative Care',
+      description: 'We use clinical-grade treatments like Olaplex to ensure your hair stays healthy and strong.',
     },
     {
-      icon: '📈',
-      title: 'Grow Your Business',
-      description: 'Access premium clients and expand your services in a professional environment.',
+      icon: '📅',
+      title: 'Personalized Care',
+      description: 'Every appointment is tailored to your specific hair goals and long-term hair health.',
     },
     {
-      icon: '🎓',
-      title: 'Professional Development',
-      description: 'Access to workshops, training, and industry resources to enhance your skills.',
+      icon: '🌟',
+      title: 'Elite Products',
+      description: 'We exclusively use professional-grade lines like Kerastase and Oribe for superior results.',
     },
     {
       icon: '🛡️',
-      title: 'Complete Support',
-      description: 'Dedicated support team available to help you succeed every step of the way.',
+      title: 'Health First',
+      description: 'We prioritize the integrity of your hair, never compromising health for a temporary look.',
     },
   ];
 
@@ -86,10 +92,10 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
         {/* Header */}
         <div className="space-y-3 pr-8">
           <h2 className="text-3xl font-bold text-foreground">
-            Why Join <span className="text-accent">Adorabella?</span>
+            Why <span className="text-accent">Adorabella?</span>
           </h2>
           <p className="text-muted-foreground">
-            Discover the benefits of becoming part of our premium salon community.
+            Discover what makes our premium salon experience unique and transformative.
           </p>
         </div>
 
@@ -112,16 +118,16 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
           <h3 className="font-bold text-foreground text-lg">Our Track Record</h3>
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-accent">50+</div>
-              <p className="text-xs text-muted-foreground">Active Professionals</p>
+              <div className="text-2xl font-bold text-accent">10k+</div>
+              <p className="text-xs text-muted-foreground">Happy Clients</p>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-accent">4.9★</div>
               <p className="text-xs text-muted-foreground">Average Rating</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-accent">98%</div>
-              <p className="text-xs text-muted-foreground">Satisfaction Rate</p>
+              <div className="text-2xl font-bold text-accent">15+</div>
+              <p className="text-xs text-muted-foreground">Years Experience</p>
             </div>
           </div>
         </div>
@@ -134,7 +140,7 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
             className="w-full"
             onClick={() => onClose()}
           >
-            Ready to Join? Start Your Application
+            Ready for Your Transformation? Request Access
           </ButtonCTA>
           <button
             onClick={onClose}

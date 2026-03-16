@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import { useState, Suspense, lazy } from 'react';
+import { Magnetic } from './magnetic';
 
 const Dithering = lazy(() =>
   import('@paper-design/shaders-react').then((mod) => ({ default: mod.Dithering }))
@@ -123,24 +124,30 @@ export function HeroDitheringCard({
             </p>
 
             {/* Touch targets: min 44px height/width for mobile (WCAG 2.5.5). h-14 = 56px. */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-              <button
-                type="button"
-                onClick={onPrimaryCtaClick}
-                className="group relative inline-flex min-h-[44px] h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-accent px-12 text-base font-medium text-accent-foreground transition-all duration-300 hover:bg-[#c9a227] hover:scale-105 active:scale-95 hover:ring-4 hover:ring-accent/20 focus:outline-none focus-visible:ring-4 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <span className="relative z-10">{primaryCtaText}</span>
-                <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
-              {secondaryCtaText && secondaryCtaHref && (
-                <a
-                  href={secondaryCtaHref}
-                  className="inline-flex min-h-[44px] h-14 items-center justify-center rounded-full border-2 border-accent px-8 text-base font-medium text-accent transition-colors hover:bg-accent/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+              <Magnetic strength={0.2}>
+                <button
+                  type="button"
+                  onClick={onPrimaryCtaClick}
+                  className="group relative inline-flex min-h-[44px] h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-accent px-12 text-base font-medium text-accent-foreground transition-all duration-300 hover:bg-[#c9a227] hover:scale-105 active:scale-95 hover:ring-8 hover:ring-accent/20 focus:outline-none focus-visible:ring-4 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background shadow-[0_20px_40px_-15px_rgba(212,175,55,0.3)]"
                 >
-                  {secondaryCtaText}
-                </a>
+                  <span className="relative z-10">{primaryCtaText}</span>
+                  <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </Magnetic>
+
+              {secondaryCtaText && secondaryCtaHref && (
+                <Magnetic strength={0.1}>
+                  <a
+                    href={secondaryCtaHref}
+                    className="inline-flex min-h-[44px] h-14 items-center justify-center rounded-full border-2 border-accent/30 px-8 text-base font-medium text-accent transition-all duration-300 hover:bg-accent hover:text-accent-foreground hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    {secondaryCtaText}
+                  </a>
+                </Magnetic>
               )}
             </div>
+
 
             {stats && stats.length > 0 && (
               <div className="flex flex-wrap gap-8 justify-center border-t border-border pt-8 w-full max-w-xl">

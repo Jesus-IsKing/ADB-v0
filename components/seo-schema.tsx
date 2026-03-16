@@ -4,7 +4,7 @@ export const SEOSchema = () => {
     "@type": "LocalBusiness",
     "name": "Adorabella Salon",
     "image": "https://adorabella.com/hero.jpg",
-    "description": "Premium chair rental services for beauty professionals. Flexible terms, premium facilities, and 24/7 support.",
+    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from our master stylists in a premium sanctuary.",
     "url": "https://adorabella.com",
     "telephone": "+1 (123) 456-7890",
     "email": "info@adorabella.com",
@@ -16,7 +16,7 @@ export const SEOSchema = () => {
       "postalCode": "10001",
       "addressCountry": "US"
     },
-    "priceRange": "$$",
+    "priceRange": "$$$",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -39,23 +39,23 @@ export const SEOSchema = () => {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Daily Pass",
-        "description": "Full day access (8 hours) with professional equipment and client waiting area",
+        "name": "Precision Cut & Style",
+        "description": "Geometric precision cuts and signature blowouts by master stylists",
+        "price": "55",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Color Artistry",
+        "description": "Luxury balayage, artisan color, and bond-building repair services",
+        "price": "110",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Care & Repair",
+        "description": "Clinical hair repair treatments including Olaplex and Kerastase",
         "price": "45",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Weekly Plan",
-        "description": "Unlimited daily access with premium equipment and priority support",
-        "price": "250",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Monthly Premium",
-        "description": "Full-time exclusive access with premium setup and dedicated support",
-        "price": "800",
         "priceCurrency": "USD"
       }
     ]

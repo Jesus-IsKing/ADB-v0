@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { ButtonCTA } from './button-cta';
 
 interface PricingSectionProps {
@@ -9,41 +10,38 @@ interface PricingSectionProps {
 export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) => {
   const plans = [
     {
-      name: 'Daily Pass',
-      price: '$45',
-      period: 'per day',
+      name: 'Cut & Style',
+      price: 'From $55',
+      period: 'avg.',
       features: [
-        'Full day access (8 hours)',
-        'Professional equipment',
-        'Client waiting area',
-        'Basic support',
+        'Women\'s Precision Cut',
+        'Men\'s Designer Grooming',
+        'Signature Silk Blowout',
+        'Transformation Styling',
       ],
       highlighted: false,
     },
     {
-      name: 'Weekly Plan',
-      price: '$250',
-      period: 'per week',
+      name: 'Color Artistry',
+      price: 'From $110',
+      period: 'avg.',
       features: [
-        'Unlimited daily access',
-        'Premium equipment',
-        'Private waiting area',
-        'Priority support',
-        'Storage space',
+        'Luxury Balayage & Ombre',
+        'Full Multi-Tone Highlights',
+        'Global Color & Glossing',
+        'Expert Color Correction',
       ],
       highlighted: true,
     },
     {
-      name: 'Monthly Premium',
-      price: '$800',
-      period: 'per month',
+      name: 'Care & Repair',
+      price: 'From $45',
+      period: 'add-on',
       features: [
-        'Full-time exclusive access',
-        'Premium luxury setup',
-        'Dedicated space',
-        '24/7 priority support',
-        'Marketing support',
-        'Client referrals',
+        'Olaplex Bond Repair',
+        'Kerastase Ritual Rituals',
+        'Scalp Detox Therapy',
+        'Deep Hydration Infusion',
       ],
       highlighted: false,
     },
@@ -56,25 +54,25 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 animate-slideUp">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Transparent <span className="text-accent">Pricing</span>
+        <div className="text-center mb-16 md:mb-24 animate-slideUp">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
+            Curated <span className="text-accent italic">Investments</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose the plan that works best for your beauty business
+          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+            Bespoke artistry tailored to your unique hair architecture.
           </p>
         </div>
+
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {plans.map((plan, idx) => (
             <div
               key={idx}
-              className={`rounded-xl border transition-all duration-300 overflow-hidden animate-slideUp ${
-                plan.highlighted
-                  ? 'glass-gold md:scale-105 relative'
-                  : 'glass md:hover:glass-gold'
-              }`}
+              className={`rounded-xl border transition-all duration-300 overflow-hidden animate-slideUp ${plan.highlighted
+                ? 'glass-gold md:scale-105 relative'
+                : 'glass md:hover:glass-gold'
+                }`}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {plan.highlighted && (
@@ -120,20 +118,30 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
                   className="w-full"
                   size="md"
                 >
-                  Get Started
+                  Check Availability
                 </ButtonCTA>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Pricing Notice */}
+        <div className="text-center mb-12 animate-slideUp" style={{ animationDelay: '400ms' }}>
+          <p className="text-sm text-muted-foreground italic">
+            * Final pricing varies by service type and specific hair needs. All clients receive a custom tailored quote during consultation.
+          </p>
+        </div>
+
         {/* Additional Info */}
-        <div className="glass p-6 md:p-8 text-center">
-          <p className="text-foreground mb-3">
-            Not sure which plan is right for you?
+        <div className="glass p-6 md:p-8 text-center animate-slideUp" style={{ animationDelay: '500ms' }}>
+          <p className="text-foreground font-medium mb-2">
+            Need a specific treatment not listed?
+          </p>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base">
+            Whether it's a specialty color or a unique restoration plan, we provide personalized consultations for every client.
           </p>
           <ButtonCTA variant="outline" onClick={onCTAClick}>
-            Schedule a Consultation
+            Discuss Your Goals
           </ButtonCTA>
         </div>
       </div>
