@@ -37,6 +37,8 @@ export interface HeroDitheringCardProps {
   accentColor?: string;
   /** Minimum height of the card (default min-h-[600px]) */
   minHeight?: string;
+  /** Background image URL */
+  backgroundImage?: string;
 }
 
 export function HeroDitheringCard({
@@ -54,6 +56,7 @@ export function HeroDitheringCard({
   onScrollIndicatorClick,
   accentColor = '#d4af37',
   minHeight = 'min-h-[600px] md:min-h-[700px]',
+  backgroundImage,
 }: HeroDitheringCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const useBusinessNameHeader = Boolean(businessName);
@@ -68,6 +71,17 @@ export function HeroDitheringCard({
         <div
           className={`relative overflow-hidden rounded-[48px] border border-border bg-card shadow-sm ${minHeight} flex flex-col items-center justify-center duration-500`}
         >
+          {backgroundImage && (
+            <div className="absolute inset-0 z-0">
+              <img
+                src={backgroundImage}
+                alt="Hero Background"
+                className="size-full object-cover opacity-20 dark:opacity-10 transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background/80" />
+            </div>
+          )}
+
           <Suspense fallback={<div className="absolute inset-0 bg-muted/20 animate-pulse" />}>
             <div className="absolute inset-0 z-0 pointer-events-none opacity-40 dark:opacity-30 mix-blend-multiply dark:mix-blend-screen">
               <Dithering

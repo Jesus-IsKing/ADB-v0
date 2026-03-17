@@ -322,6 +322,39 @@
     color: #d4af37;
   }
 
+  .photo-glow {
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .photo-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 0px rgba(212, 175, 55, 0);
+    transition: box-shadow 0.5s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .photo-glow:hover::after {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+  }
+
+  .lookbook-watermark {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+  }
+
   .border-accent {
     border-color: #d4af37;
   }

@@ -34,7 +34,7 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
     return (
         <div ref={ref} className={`relative overflow-hidden group/img ${className}`}>
             <motion.div
-                style={{ y, height: '120%', top: '-10%', position: 'absolute', width: '100%' }}
+                style={{ y, height: '110%', top: '-5%', position: 'absolute', width: '100%' }}
                 className={showGlow ? "transition-shadow duration-1000 group-hover/img:shadow-[0_0_100px_-20px_rgba(212,175,55,0.3)]" : ""}
             >
                 <Image
@@ -43,12 +43,13 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
                     fill={fill}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={src.includes('hero')}
                 />
             </motion.div>
 
             {showWatermark && (
                 <div className="absolute bottom-6 right-6 opacity-20 pointer-events-none select-none">
-                    <span className="font-serif text-3xl font-light italic text-white tracking-widest">A</span>
+                    <span className="font-serif text-lg font-light tracking-[0.5em] text-white uppercase">Adorabella</span>
                 </div>
             )}
 

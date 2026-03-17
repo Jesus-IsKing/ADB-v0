@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-Sitemap: https://adorabella.com/sitemap.xml
+Sitemap: https://adorabella-salon.com/sitemap.xml

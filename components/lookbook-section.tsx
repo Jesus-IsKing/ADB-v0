@@ -137,7 +137,7 @@ export const LookbookSection: React.FC = () => {
                 {/* Gallery Grid - Editorial Masonry */}
                 <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[minmax(200px,auto)] grid-flow-dense"
+                    className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredItems.map((item, index) => (
@@ -148,25 +148,27 @@ export const LookbookSection: React.FC = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-                                className={`relative group overflow-hidden glass-gold rounded-3xl ${item.size === 'large' ? 'md:col-span-8 md:row-span-4' :
-                                    item.size === 'medium' ? 'md:col-span-6 md:row-span-3' :
-                                        'md:col-span-4 md:row-span-3'
-                                    }`}
+                                className="break-inside-avoid relative group overflow-hidden glass-gold rounded-3xl photo-glow"
                             >
-                                <ParallaxImage
-                                    src={item.image}
-                                    alt={item.title}
-                                    speed={0.05 + (index % 3) * 0.02}
-                                    className="h-full w-full"
-                                    showWatermark={item.size === 'large'}
-                                />
+                                <div className={`relative overflow-hidden ${item.aspectRatio === 'portrait' ? 'aspect-[3/4]' :
+                                    item.aspectRatio === 'landscape' ? 'aspect-[4/3]' :
+                                        'aspect-square'
+                                    }`}>
+                                    <ParallaxImage
+                                        src={item.image}
+                                        alt={item.title}
+                                        speed={0.03}
+                                        className="h-full w-full"
+                                        showWatermark={item.size === 'large'}
+                                    />
+                                </div>
 
                                 {/* Overlay content */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
-                                    <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out space-y-3">
-                                        <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">{item.category}</span>
-                                        <h3 className="text-3xl font-serif font-medium text-white tracking-tight">{item.title}</h3>
-                                        <p className="text-white/70 text-base leading-relaxed max-w-sm font-light">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                    <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out space-y-2">
+                                        <span className="text-accent text-[10px] font-bold tracking-[0.2em] uppercase">{item.category}</span>
+                                        <h3 className="text-2xl font-serif font-medium text-white tracking-tight">{item.title}</h3>
+                                        <p className="text-white/70 text-sm leading-relaxed max-w-sm font-light">
                                             {item.description}
                                         </p>
                                     </div>

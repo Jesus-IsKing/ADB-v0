@@ -3,24 +3,24 @@ export const SEOSchema = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Adorabella Salon",
-    "image": "https://adorabella.com/hero.jpg",
-    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from our master stylists in a premium sanctuary.",
-    "url": "https://adorabella.com",
-    "telephone": "+1 (123) 456-7890",
-    "email": "info@adorabella.com",
+    "image": "https://adorabella-salon.com/hero.jpg",
+    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from master stylists in a premium sanctuary.",
+    "url": "https://adorabella-salon.com",
+    "telephone": "+1 (509) 679-4206",
+    "email": "inquiries@adorabella-salon.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Beauty Street",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "postalCode": "10001",
+      "streetAddress": "By Appointment Only",
+      "addressLocality": "Wenatchee",
+      "addressRegion": "WA",
+      "postalCode": "98801",
       "addressCountry": "US"
     },
     "priceRange": "$$$",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "50"
+      "ratingValue": "5.0",
+      "reviewCount": "12"
     },
     "openingHoursSpecification": [
       {

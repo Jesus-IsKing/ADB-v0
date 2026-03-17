@@ -109,8 +109,8 @@ export default function ContactPage() {
                   </div>
                   <p className="text-muted-foreground text-lg">
                     Adorabella Premium Salon<br />
-                    123 Beauty Street<br />
-                    New York, NY 10001
+                    By Appointment Only<br />
+                    Wenatchee, WA 98801
                   </p>
                 </div>
               </div>

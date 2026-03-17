@@ -15,21 +15,21 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
       title: 'Precision Cutting',
       description:
         'Master the perfect silhouette with our geometric precision cutting techniques, tailored to your unique features and hair texture.',
-      image: '/feature-hair.jpg',
+      image: '/feature-hair.png',
     },
     {
       icon: '🎨',
       title: 'Master Colorists',
       description:
         'From high-dimension balayage to expert color correction, we utilize premium bond-builders to ensure vibrant, damage-free results.',
-      image: '/feature-color.jpg',
+      image: '/feature-color.png',
     },
     {
       icon: '✨',
       title: 'Restorative Care',
       description:
         'Revive stressed hair with elite clinical treatments like Olaplex and Kerastase, designed to repair bonds and restore natural shine.',
-      image: '/feature-events.jpg',
+      image: '/feature-events.png',
     },
   ];
 

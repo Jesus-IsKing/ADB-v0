@@ -38,6 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
           { value: 'Cell', label: 'Direct Access' },
         ]}
         minHeight="min-h-[75vh] md:min-h-[80vh]"
+        backgroundImage="/hero-luxury.png"
       />
     </div>
   );
