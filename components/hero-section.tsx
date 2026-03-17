@@ -2,19 +2,22 @@
 
 import React from 'react';
 import { AnnouncementBanner } from '@/components/announcement-banner';
-import { HeroDitheringCard } from '@/components/ui/hero-dithering-card';
+import { MagazineHero } from '@/components/ui/magazine-hero';
+import { useRouter } from 'next/navigation';
 
 interface HeroSectionProps {
   onCTAClick?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
+  const router = useRouter();
+
   const scrollToLookbook = () => {
     document.getElementById('lookbook')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToFeatures = () => {
-    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+  const handleSecondaryAction = () => {
+    router.push('/contact');
   };
 
   return (
@@ -22,24 +25,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       {/* Announcement banner sits below nav but above main hero content */}
       <AnnouncementBanner />
 
-      <HeroDitheringCard
+      <MagazineHero
         badge="Private Boutique Portfolio"
-        businessName="Adorabella Salon"
-        tagline="Artistry in Precision & Restoration"
-        description="A private sanctuary for master hair artistry. We are currently nearly fully booked and operating via a private waitlist. Explore our portfolio of geometric precision cutting and restorative color transformations."
-        primaryCtaText="View Our Portfolio"
-        secondaryCtaText="Join the Private Waitlist"
-        secondaryCtaHref="/contact"
+        title="Precision & Artistry"
+        subtitle="The Adorabella Journal"
+        description="A private sanctuary for master hair artistry. Nearly fully booked and operating via an exclusive waitlist. Explore our portfolio of geometric precision and restorative transformations."
+        primaryCtaText="Expose The Art"
+        secondaryCtaText="Join The Waitlist"
         onPrimaryCtaClick={scrollToLookbook}
-        onScrollIndicatorClick={scrollToLookbook}
-        stats={[
-          { value: '15+', label: 'Years of Artistry' },
-          { value: 'Fully', label: 'Booked Boutique' },
-          { value: 'Cell', label: 'Direct Access' },
+        onSecondaryCtaClick={handleSecondaryAction}
+        images={[
+          "/lookbook-real-1.jpg",
+          "/lookbook-real-4.jpg",
+          "/lookbook-real-2.jpg",
         ]}
-        minHeight="min-h-[75vh] md:min-h-[80vh]"
-        backgroundImage="/hero-luxury.png"
       />
     </div>
   );
 };
+
