@@ -10,38 +10,38 @@ interface PricingSectionProps {
 export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) => {
   const plans = [
     {
-      name: 'Cut & Style',
-      price: 'From $55',
-      period: 'avg.',
+      name: 'Geometric Architecture',
+      price: 'From $65',
+      period: 'investment',
       features: [
-        'Women\'s Precision Cut',
-        'Men\'s Designer Grooming',
-        'Signature Silk Blowout',
-        'Transformation Styling',
+        'Anatomical Precision Cut',
+        'Designer Structure & Form',
+        'Signature High-Shine Finish',
+        'Metabolic Transformation',
       ],
       highlighted: false,
     },
     {
-      name: 'Color Artistry',
-      price: 'From $110',
-      period: 'avg.',
+      name: 'Chromatic Mastery',
+      price: 'From $140',
+      period: 'investment',
       features: [
-        'Luxury Balayage & Ombre',
-        'Full Multi-Tone Highlights',
-        'Global Color & Glossing',
-        'Expert Color Correction',
+        'Master-Level Color Fusion',
+        'High-Impact Dimensional Art',
+        'Molecular Bond Restoration',
+        'Archive-Grade Portfolio Finish',
       ],
       highlighted: true,
     },
     {
-      name: 'Care & Repair',
-      price: 'From $45',
-      period: 'add-on',
+      name: 'Resurrection Rituals',
+      price: 'From $55',
+      period: 'sequence',
       features: [
-        'Olaplex Bond Repair',
-        'Kerastase Ritual Rituals',
-        'Scalp Detox Therapy',
-        'Deep Hydration Infusion',
+        'Intensive Cuticle Alignment',
+        'Molecular Integrity Repair',
+        'Scalp Detox & Micro-Circulation',
+        'Restorative Deep Infusion',
       ],
       highlighted: false,
     },
@@ -50,99 +50,78 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
   return (
     <section
       id="pricing"
-      className="w-full py-20 md:py-32 bg-background"
+      className="w-full py-20 md:py-40 bg-background"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24 animate-slideUp">
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
-            Curated <span className="text-accent italic">Investments</span>
+        <div className="text-center mb-16 md:mb-32 animate-slideUp">
+          <p className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Investment Menu</p>
+          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-8 text-balance tracking-tight leading-[0.9]">
+            Bespoke <br /><span className="text-accent italic">Investments</span>
           </h2>
-          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-            Bespoke artistry tailored to your unique hair architecture.
+          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
+            Our artistry is a long-term asset for your personal architecture. Each session is a custom allocation of master-level resources.
           </p>
         </div>
 
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20">
           {plans.map((plan, idx) => (
             <div
               key={idx}
-              className={`rounded-xl border transition-all duration-300 overflow-hidden animate-slideUp ${plan.highlighted
-                ? 'glass-gold md:scale-105 relative'
-                : 'glass md:hover:glass-gold'
+              className={`border border-border/50 group hover:border-accent/30 transition-all duration-700 overflow-hidden animate-slideUp ${plan.highlighted
+                ? 'bg-secondary/10 md:scale-105 relative'
+                : 'bg-transparent'
                 }`}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {plan.highlighted && (
-                <div className="bg-accent text-accent-foreground py-2 text-center text-sm font-bold">
-                  MOST POPULAR
+                <div className="bg-accent text-accent-foreground py-2 text-center text-[8px] tracking-[0.3em] font-bold uppercase">
+                  Primary Specialization
                 </div>
               )}
 
-              <div className="p-6 lg:p-8 space-y-6">
+              <div className="p-10 lg:p-12 space-y-8">
                 {/* Plan Header */}
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">{plan.name}</h3>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-serif font-medium text-foreground">{plan.name}</h3>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-accent">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-4xl font-light text-accent">{plan.price}</span>
+                    <span className="text-muted-foreground text-[10px] uppercase tracking-widest">{plan.period}</span>
                   </div>
                 </div>
 
                 {/* Features List */}
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {plan.features.map((feature, featureIdx) => (
-                    <li key={featureIdx} className="flex items-start gap-3">
-                      <svg
-                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-foreground">{feature}</span>
+                    <li key={featureIdx} className="flex items-center gap-4 text-xs tracking-wide text-foreground/70 group-hover:text-foreground transition-colors">
+                      <div className="w-1 h-1 bg-accent rounded-full" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* CTA Button */}
-                <ButtonCTA
+                <button
                   onClick={onCTAClick}
-                  variant={plan.highlighted ? 'primary' : 'secondary'}
-                  className="w-full"
-                  size="md"
+                  className={`w-full py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${plan.highlighted
+                      ? 'bg-foreground text-background hover:bg-accent'
+                      : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
+                    }`}
                 >
-                  Check Availability
-                </ButtonCTA>
+                  Inquire for Placement
+                </button>
               </div>
             </div>
           ))}
         </div>
 
         {/* Pricing Notice */}
-        <div className="text-center mb-12 animate-slideUp" style={{ animationDelay: '400ms' }}>
-          <p className="text-sm text-muted-foreground italic">
-            * Final pricing varies by service type and specific hair needs. All clients receive a custom tailored quote during consultation.
+        <div className="text-center animate-slideUp" style={{ animationDelay: '400ms' }}>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground italic max-w-xl mx-auto">
+            * All allocations subject to master assessment. Precise investment figures provided post-consultation.
           </p>
-        </div>
-
-        {/* Additional Info */}
-        <div className="glass p-6 md:p-8 text-center animate-slideUp" style={{ animationDelay: '500ms' }}>
-          <p className="text-foreground font-medium mb-2">
-            Need a specific treatment not listed?
-          </p>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-            Whether it's a specialty color or a unique restoration plan, we provide personalized consultations for every client.
-          </p>
-          <ButtonCTA variant="outline" onClick={onCTAClick}>
-            Discuss Your Goals
-          </ButtonCTA>
         </div>
       </div>
     </section>

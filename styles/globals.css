@@ -182,8 +182,31 @@
   }
 
   .glass-gold {
-    @apply bg-background/40 backdrop-blur-xl border border-white/10;
-    box-shadow: 0 8px 32px 0 rgba(191, 155, 48, 0.1);
+    @apply bg-background/40 backdrop-blur-xl border border-white/5;
+    box-shadow: 0 4px 24px -1px rgba(212, 175, 55, 0.08);
+  }
+
+  /* Cinematic Shutter Reveal */
+  .shutter-mask {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  /* Technical Specs Typography */
+  .font-technical {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .archive-number {
+    font-family: var(--font-mono);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    @apply opacity-30 select-none;
   }
 
   .noise-overlay {
@@ -203,7 +226,7 @@
   }
 
   .aura-blob {
-    @apply absolute blur-[120px] opacity-30 mix-blend-soft-light pointer-events-none;
+    @apply absolute blur-[120px] opacity-10 mix-blend-soft-light pointer-events-none;
     animation: move-aura 20s ease-in-out infinite;
   }
 

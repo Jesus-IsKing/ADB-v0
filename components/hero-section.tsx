@@ -29,9 +29,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         badge="Private Boutique Portfolio"
         title="Precision & Artistry"
         subtitle="The Adorabella Journal"
-        description="A private sanctuary for master hair artistry. Nearly fully booked and operating via an exclusive waitlist. Explore our portfolio of geometric precision and restorative transformations."
+        description="A private sanctuary for master hair artistry. Operating via an exclusive waitlist with limited cycle openings. Explore our archive of geometric precision and restorative transformations."
         primaryCtaText="Expose The Art"
-        secondaryCtaText="Join The Waitlist"
+        secondaryCtaText="Check Cycle Priority"
         onPrimaryCtaClick={scrollToLookbook}
         onSecondaryCtaClick={handleSecondaryAction}
         images={[

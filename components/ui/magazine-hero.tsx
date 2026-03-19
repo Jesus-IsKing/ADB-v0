@@ -157,11 +157,20 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="hidden lg:flex flex-col space-y-1 pt-12 text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/50 border-t border-border/50 w-full"
+                            className="hidden lg:flex flex-col space-y-2 pt-12 text-[10px] font-mono uppercase tracking-[0.2em] border-t border-border/50 w-full"
                         >
-                            <span>Adorabella Volume No. 04</span>
-                            <span>Issue: Spring / Summer 2026</span>
-                            <span>Curated by: Master Artistry Group</span>
+                            <div className="flex flex-col space-y-1 text-muted-foreground/50">
+                                <span>Adorabella Archive No. 2026-X</span>
+                                <span>Issue: Spring / Summer Edition</span>
+                                <span>Curated by: Master Artistry Group</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-accent/80 font-bold">
+                                <span className="relative flex h-1.5 w-1.5">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
+                                </span>
+                                <span>Placement Status: HIGHLY LIMITED</span>
+                            </div>
                         </motion.div>
                     </div>
 

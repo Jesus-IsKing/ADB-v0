@@ -8,6 +8,8 @@ export const CustomCursor: React.FC = () => {
     const [isClicking, setIsClicking] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
+    const [cursorText, setCursorText] = useState('');
+
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -27,6 +29,14 @@ export const CustomCursor: React.FC = () => {
 
         const handleMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
+            const lookbookItem = target.closest('#lookbook .group');
+
+            if (lookbookItem) {
+                setCursorText('VIEW');
+                setIsHovering(true);
+                return;
+            }
+
             const isSelectable =
                 target.tagName.toLowerCase() === 'button' ||
                 target.tagName.toLowerCase() === 'a' ||
@@ -34,6 +44,7 @@ export const CustomCursor: React.FC = () => {
                 target.closest('a') ||
                 target.classList.contains('cursor-pointer');
 
+            setCursorText('');
             setIsHovering(!!isSelectable);
         };
 
@@ -64,12 +75,22 @@ export const CustomCursor: React.FC = () => {
         >
             <motion.div
                 animate={{
-                    scale: isHovering ? 2.5 : isClicking ? 0.8 : 1,
+                    scale: cursorText ? 3 : isHovering ? 2.5 : isClicking ? 0.8 : 1,
                     opacity: isHovering ? 0.5 : 1,
                 }}
                 transition={{ type: 'spring', ...springConfig }}
-                className="w-full h-full rounded-full bg-white border border-accent/30"
-            />
+                className="w-full h-full rounded-full bg-white border border-accent/30 flex items-center justify-center overflow-hidden"
+            >
+                {cursorText && (
+                    <motion.span
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="text-[6px] font-bold tracking-widest text-black"
+                    >
+                        {cursorText}
+                    </motion.span>
+                )}
+            </motion.div>
 
             {/* Target Dot */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-accent rounded-full" />
