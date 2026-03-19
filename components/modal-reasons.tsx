@@ -140,7 +140,7 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
             className="w-full"
             onClick={() => onClose()}
           >
-            Ready to Begin? Connect with Us
+            Request Your Invitation
           </ButtonCTA>
           <button
             onClick={onClose}

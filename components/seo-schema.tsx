@@ -4,7 +4,7 @@ export const SEOSchema = () => {
     "@type": "LocalBusiness",
     "name": "Adorabella Salon",
     "image": "https://adorabella-salon.com/hero.jpg",
-    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from master stylists in a premium sanctuary.",
+    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from master stylists at Adorabella House.",
     "url": "https://adorabella-salon.com",
     "telephone": "+1 (509) 679-4206",
     "email": "inquiries@adorabella-salon.com",

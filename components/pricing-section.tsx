@@ -110,7 +110,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
                     : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
                     }`}
                 >
-                  Join Our Waitlist
+                  Join Private Guest List
                 </button>
               </div>
             </div>

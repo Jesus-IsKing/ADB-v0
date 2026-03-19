@@ -29,9 +29,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         badge="Boutique Hair Salon"
         title="Precision & Artistry"
         subtitle="The Adorabella Journal"
-        description="A peaceful sanctuary for artistic hair care. We currently operate via a waitlist to ensure every guest receives our full attention. Explore our gallery of precision cuts and restorative treatments."
-        primaryCtaText="View Our Work"
-        secondaryCtaText="Join Our Waitlist"
+        description="A dedicated destination for artistic excellence. We currently operate via a private waitlist to ensure every guest receives our undivided attention at the Adorabella House. Discover our archive of precision cuts and restorative transformations."
+        primaryCtaText="Explore The House"
+        secondaryCtaText="Request Your Invite"
         onPrimaryCtaClick={scrollToLookbook}
         onSecondaryCtaClick={handleSecondaryAction}
         images={[

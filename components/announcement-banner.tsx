@@ -23,7 +23,7 @@ export function AnnouncementBanner() {
           <HeroPill
             href="/contact"
             label="Appointment Only — No walk-ins"
-            announcement="✨ Sanctuary"
+            announcement="The House"
             className="bg-primary/5 border-accent/20"
           />
           <HeroPill

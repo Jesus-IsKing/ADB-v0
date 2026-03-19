@@ -19,12 +19,12 @@ interface MagazineHeroProps {
 }
 
 export const MagazineHero: React.FC<MagazineHeroProps> = ({
-    badge = "A Private Sanctuary",
+    badge = "The Adorabella House",
     title = "Precision & Artistry",
     subtitle = "The Adorabella Portfolio",
-    description = "Explore a curated collection of geometric precision and restorative transformations. We push the boundaries of hair health and architectural style.",
-    primaryCtaText = "View Portfolio",
-    secondaryCtaText = "Join Waitlist",
+    description = "Discover a dedicated destination for hair artistry. We operate a private guest list to ensure every guest receives our undivided attention.",
+    primaryCtaText = "Enter the Archive",
+    secondaryCtaText = "Join Guest List",
     onPrimaryCtaClick,
     onSecondaryCtaClick,
     images = [

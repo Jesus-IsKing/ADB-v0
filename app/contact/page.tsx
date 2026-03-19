@@ -38,7 +38,7 @@ export default function ContactPage() {
               Get in <span className="text-accent">Touch</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Adorabella is a private boutique sanctuary that is currently <span className="text-accent font-semibold">nearly fully booked</span>. We do not accept walk-ins. To discuss your hair journey or join our private waitlist, please reach out directly to Natalie via call or text.
+              Adorabella is a private boutique destination that is currently <span className="text-accent font-semibold">nearly fully booked</span>. We do not accept walk-ins. To discuss your hair journey or join our private guest list, please reach out directly to Natalie via call or text.
             </p>
           </div>
         </section>

@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ButtonCTA } from './button-cta';
+import { Scissors, Palette, Sparkles } from 'lucide-react';
 
 interface FeaturesSectionProps {
   onCTAClick?: () => void;
@@ -11,24 +12,24 @@ interface FeaturesSectionProps {
 export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) => {
   const features = [
     {
-      icon: '💇‍♀️',
+      icon: <Scissors className="w-8 h-8 text-accent" />,
       title: 'Precision Cutting',
       description:
         'Master the perfect silhouette with our geometric precision cutting techniques, tailored to your unique features and hair texture.',
       image: '/feature-hair.png',
     },
     {
-      icon: '🎨',
+      icon: <Palette className="w-8 h-8 text-accent" />,
       title: 'Master Colorists',
       description:
         'From high-dimension balayage to expert color correction, we utilize premium bond-builders to ensure vibrant, damage-free results.',
       image: '/feature-color.png',
     },
     {
-      icon: '✨',
+      icon: <Sparkles className="w-8 h-8 text-accent" />,
       title: 'Restorative Care',
       description:
-        'Revive stressed hair with elite clinical treatments like Olaplex and Kerastase, designed to repair bonds and restore natural shine.',
+        'Revive stressed hair with elite clinical treatments designed to repair bonds and restore natural, healthy shine.',
       image: '/feature-events.png',
     },
   ];
@@ -70,7 +71,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
 
               {/* Feature Content */}
               <div className="p-6 space-y-4">
-                <div className="text-3xl">{feature.icon}</div>
+                <div className="flex justify-start">{feature.icon}</div>
                 <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
@@ -83,7 +84,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
         {/* CTA */}
         <div className="flex justify-center pt-8">
           <ButtonCTA size="lg" onClick={onCTAClick}>
-            Start Your Journey
+            Request Your Invitation
           </ButtonCTA>
         </div>
       </div>

@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-accent">Adorabella</h3>
             <p className="text-muted-foreground">
-              Experience the art of premium beauty in a sanctuary of luxury.
+              Experience the art of premium beauty at the Adorabella House, a dedicated destination for restoration.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
               onClick={onCTAClick}
               className="w-full"
             >
-              Connect with Natalie
+              Request Your Invitation
             </ButtonCTA>
           </div>
         </div>
