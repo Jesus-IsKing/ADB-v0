@@ -24,9 +24,9 @@ export function HeroPill({
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noreferrer noopener' : undefined}
       className={cn(
-        'flex w-auto items-center space-x-2 rounded-full',
+        'flex w-auto items-center space-x-1.5 sm:space-x-2 rounded-full',
         'bg-primary/10 ring-1 ring-accent',
-        'px-2 py-1 whitespace-pre',
+        'px-1.5 py-1 sm:px-2',
         className,
       )}
       initial={{ opacity: 0, y: -20 }}
@@ -35,18 +35,18 @@ export function HeroPill({
     >
       <div
         className={cn(
-          'w-fit rounded-full bg-accent px-2 py-0.5',
-          'text-xs font-medium text-accent-foreground sm:text-sm',
-          'text-center',
+          'w-fit rounded-full bg-accent px-1.5 py-0.5 sm:px-2',
+          'text-[10px] sm:text-xs font-medium text-accent-foreground sm:text-sm',
+          'text-center uppercase tracking-tighter sm:tracking-normal',
         )}
       >
         {announcement}
       </div>
-      <p className="text-xs font-medium text-primary sm:text-sm">{label}</p>
+      <p className="text-[10px] leading-tight font-medium text-primary sm:text-sm">{label}</p>
       <svg
-        width="12"
-        height="12"
-        className="ml-1"
+        width="10"
+        height="10"
+        className="ml-1 hidden sm:block"
         viewBox="0 0 12 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
