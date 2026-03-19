@@ -26,17 +26,17 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Adorabella Salon | Premium Beauty & Hair Styling Services',
-  description: 'Experience luxury hair styling, artisan color, and bespoke beauty services at Adorabella House. Expert stylists, premium care, and a dedicated destination for restoration.',
-  keywords: 'premium hair salon, expert hair styling, artisan color, luxury beauty services, Wenatchee hair salon',
+  title: 'Adorabella House | Premium Beauty & Artistry',
+  description: 'Experience premium hair styling, artisan color, and restorative care at Adorabella House. A private destination for excellence and restoration.',
+  keywords: 'premium hair house, expert hair styling, artisan color, luxury beauty services, Wenatchee hair house',
   openGraph: {
-    title: 'Adorabella Salon | Premium Beauty & Hair Styling',
-    description: 'Experience luxury hair styling and artisan color services at Adorabella Salon.',
+    title: 'Adorabella House | Premium Beauty & Artistry',
+    description: 'Experience premium hair styling and artisan color services at Adorabella House.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adorabella Salon',
+    title: 'Adorabella House',
     description: 'Premium hair styling and artisan color services',
   },
   icons: {

@@ -2,9 +2,9 @@ export const SEOSchema = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Adorabella Salon",
+    "name": "Adorabella House",
     "image": "https://adorabella-salon.com/hero.jpg",
-    "description": "Experience luxury hair styling, artisan color, and bespoke beauty services from master stylists at Adorabella House.",
+    "description": "Premium hair styling, artisan color, and restorative care at the exclusive Adorabella House.",
     "url": "https://adorabella-salon.com",
     "telephone": "+1 (509) 679-4206",
     "email": "inquiries@adorabella-salon.com",

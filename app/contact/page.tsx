@@ -38,7 +38,7 @@ export default function ContactPage() {
               Get in <span className="text-accent">Touch</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Adorabella is a private boutique destination that is currently <span className="text-accent font-semibold">nearly fully booked</span>. We do not accept walk-ins. To discuss your hair journey or join our private guest list, please reach out directly to Natalie via call or text.
+              Adorabella House is a private boutique destination. We operate by appointment only and are nearly fully booked. To join our private guest list, please reach out directly to Natalie via call or text.
             </p>
           </div>
         </section>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-foreground">Our Location</h3>
                   </div>
                   <p className="text-muted-foreground text-lg">
-                    Adorabella Premium Salon<br />
+                    Adorabella House<br />
                     By Appointment Only<br />
                     Wenatchee, WA 98801
                   </p>
@@ -125,8 +125,7 @@ export default function ContactPage() {
                     <p>
                       Because we prioritize quality over quantity, Natalie's schedule is often booked several weeks in advance. To ensure every client receives her undivided attention, we do not use automated booking or generic forms.
                     </p>
-                    <p>
-                      If you are a new client interested in our signature precision cuts or master color services, please reach out directly. We maintain a private waitlist and will do our best to accommodate your transformation as soon as an opening becomes available.
+                      If you are a new client interested in our artistry or master color services, please reach out directly. We maintain a private waitlist to accommodate your transformation as openings arise.
                     </p>
                   </div>
                 </div>
@@ -222,7 +221,7 @@ export default function ContactPage() {
                 Ready for Your <span className="text-accent">Transformation?</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Schedule your visit to Adorabella and experience the very best in premium beauty care. We look forward to welcoming you.
+                Visit Adorabella House for the very best in premium care. We look forward to welcoming you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <button
@@ -248,7 +247,7 @@ export default function ContactPage() {
         onBackToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
 
-      {/* Modals */}
+      {/* Modals */ }
       <ModalCTA
         isOpen={showJoinModal}
         onClose={() => setShowJoinModal(false)}
@@ -257,6 +256,6 @@ export default function ContactPage() {
         isOpen={showReasonsModal}
         onClose={() => setShowReasonsModal(false)}
       />
-    </div>
+    </div >
   );
 }

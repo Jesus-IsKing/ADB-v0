@@ -130,7 +130,7 @@ export const LookbookSection: React.FC = () => {
                                 Devoted <br /><span className="text-accent italic">Artistry</span>
                             </h2>
                             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                                A humble showcase of our finest work, dedicated to excellence and the beauty of creation.
+                                A humble showcase of our finest work, dedicated to excellence and artistry.
                             </p>
                         </div>
 

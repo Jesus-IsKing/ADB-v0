@@ -60,7 +60,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
             Graceful <br /><span className="text-accent italic">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
-            We believe your hair is a crown of glory. Our mission is to serve you with excellence, providing restorative care and artistic mastery for your unique beauty.
+            Your hair is a blessed crown. Our mission is to serve you with excellence, providing restorative care and artistic mastery tailored to you.
           </p>
         </div>
 

@@ -10,17 +10,17 @@ const STEPS = [
   {
     number: '01',
     title: 'Consultation & Discovery',
-    body: 'We begin with a personal consultation to understand your hair and beauty goals, ensuring a tailored experience.',
+    body: 'We start with a personal consultation to understand your goals and ensure a tailored experience.',
   },
   {
     number: '02',
     title: 'Expert Service',
-    body: 'Sit back and relax in our premium salon environment while our master stylists bring your vision to life.',
+    body: 'Relax in our premium environment while our master stylists bring your vision to life.',
   },
   {
     number: '03',
     title: 'Signature Finish',
-    body: 'Leave feeling vibrant and confident. We provide expert advice and products to help you maintain your look at home.',
+    body: 'Leave feeling vibrant and confident. We provide the expert advice and products to maintain your look at home.',
   },
 ];
 
@@ -39,8 +39,7 @@ export function HowItWorksSection({ onCTAClick }: HowItWorksSectionProps) {
             How Adorabella <span className="text-accent">Experience</span> Works
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg">
-            A curated three-step journey from your initial vision to stepping out
-            of our doors feeling like your best self.
+            A curated three-step journey from initial vision to feeling your absolute best.
           </p>
         </div>
 

@@ -22,7 +22,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
             <div className="relative h-[500px] sm:h-[600px] lg:h-[800px] rounded-[40px] overflow-hidden">
               <ParallaxImage
                 src="/natalie-owner.jpg"
-                alt="Natalie, Owner of Adorabella Premium Salon"
+                alt="Natalie, Founder of Adorabella House"
                 speed={0.08}
                 className="h-full w-full"
                 showWatermark={true}
@@ -40,7 +40,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
                   Meet <br /><span className="text-accent italic">Natalie</span>
                 </h2>
                 <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-lg">
-                  With over 15 years of excellence, Natalie founded Adorabella House to create a dedicated destination where high-end artistry meets expert hair health.
+                  With 15+ years of excellence, Natalie founded Adorabella House to blend high-end artistry with expert hair health.
                 </p>
               </div>
             </Reveal>
@@ -49,7 +49,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
             <Reveal delay={0.3}>
               <div className="relative pl-12 border-l border-accent/30 py-4 italic space-y-6">
                 <p className="text-2xl font-serif font-light text-foreground/90 leading-relaxed">
-                  "My vision was to create a dedicated destination where high-end artistry meets expert hair health. Each service is a curated journey of precision and restorative care."
+                  "I founded this destination to blend high-end artistry with expert hair health. Each service is a curated journey of precision and care."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="h-px w-8 bg-accent" />
