@@ -154,7 +154,6 @@ export const LookbookSection: React.FC = () => {
 
                 {/* Gallery Grid - Editorial Masonry */}
                 <motion.div
-                    layout
                     className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
                 >
                     <AnimatePresence mode="popLayout">
@@ -185,15 +184,15 @@ export const LookbookSection: React.FC = () => {
                                         showWatermark={item.size === 'large'}
                                     />
 
-                                    {/* Shutter Blur Overlay */}
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 backdrop-blur-[2px]" />
+                                    {/* Shutter Blur Overlay - Reduced backdrop tax */}
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 </div>
 
                                 {/* Mastery Specs Overlay */}
                                 <div className="absolute inset-0 flex flex-col justify-between p-10 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0 pointer-events-none">
                                     <div className="flex justify-end gap-2">
                                         {item.specs?.map(spec => (
-                                            <span key={spec} className="px-2 py-1 bg-accent/20 border border-accent/30 text-accent font-technical backdrop-blur-md">
+                                            <span key={spec} className="px-2 py-1 bg-black/60 border border-accent/20 text-accent font-technical">
                                                 {spec}
                                             </span>
                                         ))}

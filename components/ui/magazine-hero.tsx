@@ -201,7 +201,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
 
                             {/* Center Reveal Button/Label */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img1:opacity-100 transition-opacity duration-500">
-                                <span className="bg-background/20 backdrop-blur-md px-6 py-2 border border-white/30 text-[10px] uppercase tracking-[0.3em] text-white">View Details</span>
+                                <span className="bg-black/60 px-6 py-2 border border-white/30 text-[10px] uppercase tracking-[0.3em] text-white">View Details</span>
                             </div>
                         </motion.div>
 
@@ -220,7 +220,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                                 className="object-cover transition-transform duration-700 group-hover/img2:scale-110"
                             />
                             <div className="absolute inset-0 ring-1 ring-inset ring-black/5" />
-                            <div className="absolute top-2 left-2 bg-background/90 backdrop-blur-sm px-2 py-1 flex flex-col opacity-0 group-hover/img2:opacity-100 transition-opacity border-l-2 border-accent">
+                            <div className="absolute top-2 left-2 bg-background/95 px-2 py-1 flex flex-col opacity-0 group-hover/img2:opacity-100 transition-opacity border-l-2 border-accent">
                                 <span className="text-[8px] font-bold tracking-tighter uppercase text-foreground">Project 01</span>
                                 <span className="text-[6px] font-medium text-accent uppercase">Precision Cut</span>
                             </div>
@@ -241,7 +241,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                                 className="object-cover"
                             />
                             <div className="absolute inset-0 bg-accent/10 mix-blend-multiply group-hover/img3:bg-transparent transition-colors" />
-                            <div className="absolute bottom-2 left-2 bg-background/90 backdrop-blur-sm px-2 py-1 flex flex-col opacity-0 group-hover/img3:opacity-100 transition-opacity border-l-2 border-accent">
+                            <div className="absolute bottom-2 left-2 bg-background/95 px-2 py-1 flex flex-col opacity-0 group-hover/img3:opacity-100 transition-opacity border-l-2 border-accent">
                                 <span className="text-[8px] font-bold tracking-tighter uppercase text-foreground">Project 02</span>
                                 <span className="text-[6px] font-medium text-accent uppercase">Master Color</span>
                             </div>

@@ -34,7 +34,7 @@ export const ParallaxImage: React.FC<ParallaxImageProps> = ({
     return (
         <div ref={ref} className={`relative overflow-hidden group/img ${className}`}>
             <motion.div
-                style={{ y, height: '110%', top: '-5%', position: 'absolute', width: '100%' }}
+                style={{ y, height: '110%', top: '-5%', position: 'absolute', width: '100%', willChange: 'transform' }}
                 className={showGlow ? "transition-shadow duration-1000 group-hover/img:shadow-[0_0_100px_-20px_rgba(212,175,55,0.3)]" : ""}
             >
                 <Image
