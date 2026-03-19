@@ -56,55 +56,55 @@ const LOOKBOOK_ITEMS: LookbookItem[] = [
     },
     {
         id: 3,
-        title: 'Architectural Bob',
+        title: 'Classic Precision Bob',
         category: 'Precision Cuts',
         image: '/lookbook-precision.png',
-        description: 'Sharp-edge geometric perimeter with interior texturing for structural weight distribution.',
-        specs: ['0-DEG-PERIM', 'TEXTURED-CORE'],
+        description: 'A sharp, classic bob with natural texture for a timeless look.',
+        specs: ['Precision Cut', 'Natural Texture'],
         refId: 'REF-2026-03-C',
         size: 'small',
         aspectRatio: 'portrait'
     },
     {
         id: 7,
-        title: 'Lived-In Ash Luxury',
+        title: 'Lived-In Soft Ash',
         category: 'Master Color',
         image: '/lookbook-real-5.jpg',
-        description: 'Smudged-root technique with cool-toned ash diffusion for low-maintenance luxury.',
-        specs: ['Root-Smudge', 'Ash-Diffusion'],
+        description: 'Low-maintenance ash tones with a soft, natural transition.',
+        specs: ['Root Smudge', 'Ash Tones'],
         refId: 'REF-2026-07-D',
         size: 'small',
         aspectRatio: 'square'
     },
     {
         id: 4,
-        title: 'Brunette Luminescence',
+        title: 'Luminous Brunette',
         category: 'Master Color',
         image: '/lookbook-real-3.jpg',
-        description: 'Hand-painted contrast highlights on a mahogany base with moisture-lock glossing.',
-        specs: ['Hand-Painted', 'Moisture-Lock'],
+        description: 'Warm contrast highlights on a rich base with deep hydration.',
+        specs: ['Hand Painted', 'Hydrated'],
         refId: 'REF-2026-04-E',
         size: 'medium',
         aspectRatio: 'landscape'
     },
     {
         id: 8,
-        title: 'HD Velvet Balayage',
+        title: 'Silky Velvet Balayage',
         category: 'Master Color',
         image: '/lookbook-real-6.jpg',
-        description: 'High-definition color saturation with a soft, creamy velvet texture and high-gloss.',
-        specs: ['HD-Saturation', 'Velvet-Finish'],
+        description: 'Soft, creamy color with a high-shine finish and velvet texture.',
+        specs: ['Soft Color', 'High Shine'],
         refId: 'REF-2026-08-H',
         size: 'small',
         aspectRatio: 'square'
     },
     {
         id: 5,
-        title: 'Molecular Transformation',
+        title: 'Restorative Care',
         category: 'Restorative Care',
         image: '/lookbook-restoration.png',
-        description: 'Internal bond repair system for chemically compromised cuticles. Visible silk health.',
-        specs: ['Bond-Repair', 'Silk-Health'],
+        description: 'Intensive treatment for hair health, restoring strength and natural shine.',
+        specs: ['Hair Health', 'Strength'],
         refId: 'REF-2026-05-F',
         size: 'small',
         aspectRatio: 'portrait'
@@ -125,12 +125,12 @@ export const LookbookSection: React.FC = () => {
                 <Reveal>
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-24">
                         <div className="max-w-xl space-y-4">
-                            <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-accent border-l border-accent/30 pl-4 py-1">Master Performance Log</p>
+                            <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-accent border-l border-accent/30 pl-4 py-1">Our Gallery of Blessings</p>
                             <h2 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground tracking-tight leading-[0.9]">
-                                Private <br /><span className="text-accent italic">Artistry</span>
+                                Devoted <br /><span className="text-accent italic">Artistry</span>
                             </h2>
                             <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                                A clinical examination of our highest-level work. Every style is an archive of precision metallurgy and structural architecture.
+                                A humble showcase of our finest work, dedicated to excellence and the beauty of creation.
                             </p>
                         </div>
 
@@ -208,7 +208,7 @@ export const LookbookSection: React.FC = () => {
                                         </p>
                                         <div className="pt-4 pointer-events-auto">
                                             <button className="text-[10px] font-bold tracking-[0.3em] uppercase text-accent border-b border-accent/30 pb-1 hover:border-accent transition-all">
-                                                Request Detail Scan
+                                                Get in Touch
                                             </button>
                                         </div>
                                     </div>
@@ -225,15 +225,15 @@ export const LookbookSection: React.FC = () => {
 
                         <div className="relative z-10 space-y-8">
                             <h3 className="text-4xl md:text-6xl font-serif font-light text-foreground max-w-4xl mx-auto leading-[1.1]">
-                                Our calendar is an <span className="text-accent italic">exclusive asset</span>. Reserve your placement in the next cycle.
+                                We serve a limited number of clients to ensure <span className="text-accent italic">exceptional quality</span>. Join our waitlist for the next availability.
                             </h3>
 
                             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                                 <button className="px-12 py-5 bg-foreground text-background text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-accent transition-colors duration-500">
-                                    Secure Waitlist Priority
+                                    Join Our Waitlist
                                 </button>
                                 <button className="px-12 py-5 border border-border text-foreground text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-secondary/50 transition-all">
-                                    Access Private Menu
+                                    View Service Menu
                                 </button>
                             </div>
                         </div>

@@ -10,38 +10,38 @@ interface PricingSectionProps {
 export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) => {
   const plans = [
     {
-      name: 'Geometric Architecture',
+      name: 'Signature Cut & Style',
       price: 'From $65',
-      period: 'investment',
+      period: 'service',
       features: [
-        'Anatomical Precision Cut',
-        'Designer Structure & Form',
+        'Artistic Precision Cut',
+        'Tailored Design & Form',
         'Signature High-Shine Finish',
-        'Metabolic Transformation',
+        'Healthy Hair Revitalization',
       ],
       highlighted: false,
     },
     {
-      name: 'Chromatic Mastery',
+      name: 'Luminous Master Color',
       price: 'From $140',
-      period: 'investment',
+      period: 'service',
       features: [
-        'Master-Level Color Fusion',
-        'High-Impact Dimensional Art',
-        'Molecular Bond Restoration',
-        'Archive-Grade Portfolio Finish',
+        'Masterful Color Blending',
+        'Beautiful Dimensional Highlights',
+        'Strengthening Fiber Repair',
+        'Camera-Ready Finish',
       ],
       highlighted: true,
     },
     {
-      name: 'Resurrection Rituals',
+      name: 'Restorative Care',
       price: 'From $55',
-      period: 'sequence',
+      period: 'session',
       features: [
-        'Intensive Cuticle Alignment',
-        'Molecular Integrity Repair',
-        'Scalp Detox & Micro-Circulation',
-        'Restorative Deep Infusion',
+        'Smooth Surface Treatment',
+        'Deep Bond Strengthening',
+        'Healthy Scalp Care',
+        'Grace-Filled Deep Conditioning',
       ],
       highlighted: false,
     },
@@ -55,12 +55,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-32 animate-slideUp">
-          <p className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Investment Menu</p>
+          <p className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Service Menu</p>
           <h2 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-8 text-balance tracking-tight leading-[0.9]">
-            Bespoke <br /><span className="text-accent italic">Investments</span>
+            Graceful <br /><span className="text-accent italic">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
-            Our artistry is a long-term asset for your personal architecture. Each session is a custom allocation of master-level resources.
+            We believe your hair is a crown of glory. Our mission is to serve you with excellence, providing restorative care and artistic mastery for your unique beauty.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
             >
               {plan.highlighted && (
                 <div className="bg-accent text-accent-foreground py-2 text-center text-[8px] tracking-[0.3em] font-bold uppercase">
-                  Primary Specialization
+                  Expert Recommendation
                 </div>
               )}
 
@@ -106,11 +106,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
                 <button
                   onClick={onCTAClick}
                   className={`w-full py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${plan.highlighted
-                      ? 'bg-foreground text-background hover:bg-accent'
-                      : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
+                    ? 'bg-foreground text-background hover:bg-accent'
+                    : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
                     }`}
                 >
-                  Inquire for Placement
+                  Join Our Waitlist
                 </button>
               </div>
             </div>
@@ -120,7 +120,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
         {/* Pricing Notice */}
         <div className="text-center animate-slideUp" style={{ animationDelay: '400ms' }}>
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground italic max-w-xl mx-auto">
-            * All allocations subject to master assessment. Precise investment figures provided post-consultation.
+            * All services are tailored to your specific needs. Final pricing will be provided during your consultation.
           </p>
         </div>
       </div>

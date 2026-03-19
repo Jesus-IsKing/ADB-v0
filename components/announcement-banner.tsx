@@ -17,13 +17,13 @@ export function AnnouncementBanner() {
           <HeroPill
             href="/contact"
             label="Nearly Fully Booked — Text for openings"
-            announcement="⚠️ Notice"
+            announcement="📅 Update"
             className="bg-primary/5 border-accent/20"
           />
           <HeroPill
             href="/contact"
             label="Appointment Only — No walk-ins"
-            announcement="🔒 Private"
+            announcement="✨ Sanctuary"
             className="bg-primary/5 border-accent/20"
           />
           <HeroPill

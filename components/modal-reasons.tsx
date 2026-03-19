@@ -31,33 +31,33 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
   const reasons = [
     {
       icon: '✨',
-      title: 'Precision Artistry',
-      description: 'Experience the difference of geometric precision cutting tailored to your unique features.',
+      title: 'Artistic Excellence',
+      description: 'Experience the beauty of precision cutting tailored specifically to your unique features.',
     },
     {
       icon: '🏆',
-      title: 'Master Colorists',
-      description: 'Our team specializes in high-end coloring and meticulous color damage repair.',
+      title: 'Master Color',
+      description: 'Our specialists focus on high-end coloring and meticulous damage repair for lasting beauty.',
     },
     {
       icon: '🧖‍♀️',
       title: 'Restorative Care',
-      description: 'We use clinical-grade treatments like Olaplex to ensure your hair stays healthy and strong.',
+      description: 'We use premium treatments to ensure your hair remains healthy, strong, and vibrant.',
     },
     {
       icon: '📅',
       title: 'Personalized Care',
-      description: 'Every appointment is tailored to your specific hair goals and long-term hair health.',
+      description: 'Every appointment is dedicated to your specific hair goals and long-term hair health.',
     },
     {
       icon: '🌟',
-      title: 'Elite Products',
-      description: 'We exclusively use professional-grade lines like Kerastase and Oribe for superior results.',
+      title: 'Quality Products',
+      description: 'We exclusively use professional-grade lines to ensure the best possible results for your hair.',
     },
     {
       icon: '🛡️',
-      title: 'Health First',
-      description: 'We prioritize the integrity of your hair, never compromising health for a temporary look.',
+      title: 'Hair Health First',
+      description: 'We prioritize the integrity of your hair, ensuring every treatment supports its natural strength.',
     },
   ];
 
@@ -95,7 +95,7 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
             Why <span className="text-accent">Adorabella?</span>
           </h2>
           <p className="text-muted-foreground">
-            Discover what makes our premium salon experience unique and transformative.
+            Discover our commitment to excellence and restorative care for your hair.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
 
         {/* Stats Section */}
         <div className="bg-white/5 border border-accent/20 rounded-lg p-6 space-y-4">
-          <h3 className="font-bold text-foreground text-lg">Our Track Record</h3>
+          <h3 className="font-bold text-foreground text-lg">Our Journey</h3>
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-accent">10k+</div>
@@ -140,7 +140,7 @@ export const ModalReasons: React.FC<ModalReasonsProps> = ({ isOpen, onClose }) =
             className="w-full"
             onClick={() => onClose()}
           >
-            Ready for Your Transformation? Request Access
+            Ready to Begin? Connect with Us
           </ButtonCTA>
           <button
             onClick={onClose}

@@ -26,12 +26,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
       <AnnouncementBanner />
 
       <MagazineHero
-        badge="Private Boutique Portfolio"
+        badge="Boutique Hair Salon"
         title="Precision & Artistry"
         subtitle="The Adorabella Journal"
-        description="A private sanctuary for master hair artistry. Operating via an exclusive waitlist with limited cycle openings. Explore our archive of geometric precision and restorative transformations."
-        primaryCtaText="Expose The Art"
-        secondaryCtaText="Check Cycle Priority"
+        description="A peaceful sanctuary for artistic hair care. We currently operate via a waitlist to ensure every guest receives our full attention. Explore our gallery of precision cuts and restorative treatments."
+        primaryCtaText="View Our Work"
+        secondaryCtaText="Join Our Waitlist"
         onPrimaryCtaClick={scrollToLookbook}
         onSecondaryCtaClick={handleSecondaryAction}
         images={[

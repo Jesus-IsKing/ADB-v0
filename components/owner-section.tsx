@@ -40,7 +40,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
                   Meet <br /><span className="text-accent italic">Natalie</span>
                 </h2>
                 <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-lg">
-                  With over 15 years of excellence, Natalie founded Adorabella to create a sanctuary where high-end artistry meets clinical hair health.
+                  With over 15 years of excellence, Natalie founded Adorabella to create a sanctuary where high-end artistry meets expert hair health.
                 </p>
               </div>
             </Reveal>
@@ -49,7 +49,7 @@ export const OwnerSection: React.FC<OwnerSectionProps> = ({ onCTAClick }) => {
             <Reveal delay={0.3}>
               <div className="relative pl-12 border-l border-accent/30 py-4 italic space-y-6">
                 <p className="text-2xl font-serif font-light text-foreground/90 leading-relaxed">
-                  "My vision was to create a sanctuary where high-end artistry meets clinical hair health. Whether it's a transformation through geometric precision cutting or reviving color-damaged hair, we focus on the integrity of your look."
+                  "My vision was to create a sanctuary where high-end artistry meets expert hair health. Whether it's a transformation through geometric precision cutting or reviving color-damaged hair, we focus on the integrity of your look."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="h-px w-8 bg-accent" />
