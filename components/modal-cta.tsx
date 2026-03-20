@@ -59,10 +59,10 @@ export const ModalCTA: React.FC<ModalCTAProps> = ({ isOpen, onClose }) => {
         {/* Content */}
         <div className="space-y-4 text-center">
           <h2 className="text-2xl font-bold text-foreground">
-            Connect with <span className="text-accent">Natalie</span>
+            Request Your <span className="text-accent">Invitation</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Natalie is nearly fully booked, but always happy to hear from you. Reach out via call or text to discuss your goals or join our private waitlist.
+            We are nearly fully booked, but always happy to hear from you. Reach out via call or text to discuss your goals or join our private waitlist.
           </p>
         </div>
 

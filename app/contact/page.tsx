@@ -37,9 +37,7 @@ export default function ContactPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
               Get in <span className="text-accent">Touch</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Adorabella House is a private boutique destination. We operate by appointment only and are nearly fully booked. To join our private guest list, please reach out directly to Natalie via call or text.
-            </p>
+            Adorabella House is a private boutique destination. We operate by appointment only and are nearly fully booked. To join our private guest list, please reach out via call or text.
           </div>
         </section>
 
@@ -75,7 +73,7 @@ export default function ContactPage() {
                       509-679-4206
                     </a>
                     <p className="text-muted-foreground leading-relaxed">
-                      Natalie handles all client communications personally to ensure the highest level of care. Whether you prefer a quick text or a detailed call, she is available for your inquiries.
+                      All client communications are handled personally to ensure the highest level of care. Whether you prefer a quick text or a detailed call, we are available for your inquiries.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -108,9 +106,8 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-foreground">Our Location</h3>
                   </div>
                   <p className="text-muted-foreground text-lg">
-                    Adorabella House<br />
-                    By Appointment Only<br />
-                    Wenatchee, WA 98801
+                    1099 Valley Mall Pkwy<br />
+                    East Wenatchee, WA 98802
                   </p>
                 </div>
               </div>
@@ -123,8 +120,9 @@ export default function ContactPage() {
                   </h2>
                   <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                     <p>
-                      Because we prioritize quality over quantity, Natalie's schedule is often booked several weeks in advance. To ensure every client receives her undivided attention, we do not use automated booking or generic forms.
+                      Because we prioritize quality over quantity, our schedule is often booked several weeks in advance. To ensure every client receives undivided attention, we do not use automated booking or generic forms.
                     </p>
+                    <p>
                       If you are a new client interested in our artistry or master color services, please reach out directly. We maintain a private waitlist to accommodate your transformation as openings arise.
                     </p>
                   </div>
@@ -132,7 +130,6 @@ export default function ContactPage() {
 
                 <div className="p-6 bg-accent/5 border border-accent/20 rounded-xl space-y-2">
                   <p className="text-foreground font-bold italic">"I look forward to personally discussing your hair journey."</p>
-                  <p className="text-accent font-medium">— Natalie, Owner</p>
                 </div>
               </div>
             </div>
@@ -247,7 +244,7 @@ export default function ContactPage() {
         onBackToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
 
-      {/* Modals */ }
+      {/* Modals */}
       <ModalCTA
         isOpen={showJoinModal}
         onClose={() => setShowJoinModal(false)}

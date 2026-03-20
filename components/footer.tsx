@@ -13,7 +13,7 @@ const navLinks = [
   { label: 'Lookbook', href: '/#lookbook' },
   { label: 'Services', href: '/#features' },
   { label: 'Menu', href: '/#pricing' },
-  { label: 'About', href: '/#about' },
+
   { label: 'Contact', href: '/contact' },
 ] as const;
 
@@ -72,9 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
           {/* CTA */}
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Inquiries</h4>
-            <p className="text-sm text-muted-foreground">
-              Directly handled by Natalie.
-            </p>
+
             <ButtonCTA
               size="sm"
               onClick={onCTAClick}

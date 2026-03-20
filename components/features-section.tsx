@@ -14,19 +14,19 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
     {
       icon: <Scissors className="w-8 h-8 text-accent" />,
       title: 'Precision Cutting',
-      'Master your silhouette with geometric precision cutting, tailored to your unique features and texture.',
+      description: 'Master your silhouette with geometric precision cutting, tailored to your unique features and texture.',
       image: '/feature-hair.png',
     },
     {
       icon: <Palette className="w-8 h-8 text-accent" />,
       title: 'Master Colorists',
-      'From high-dimension balayage to expert correction, we use premium bond-builders for vibrant, healthy results.',
+      description: 'From high-dimension balayage to expert correction, we use premium bond-builders for vibrant, healthy results.',
       image: '/feature-color.png',
     },
     {
       icon: <Sparkles className="w-8 h-8 text-accent" />,
       title: 'Restorative Care',
-      'Revive stressed hair with elite treatments that repair bonds and restore natural shine.',
+      description: 'Revive stressed hair with elite treatments that repair bonds and restore natural shine.',
       image: '/feature-events.png',
     },
   ];

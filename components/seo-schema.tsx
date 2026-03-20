@@ -7,13 +7,12 @@ export const SEOSchema = () => {
     "description": "Premium hair styling, artisan color, and restorative care at the exclusive Adorabella House.",
     "url": "https://adorabella-salon.com",
     "telephone": "+1 (509) 679-4206",
-    "email": "inquiries@adorabella-salon.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "By Appointment Only",
-      "addressLocality": "Wenatchee",
+      "streetAddress": "1099 Valley Mall Pkwy",
+      "addressLocality": "East Wenatchee",
       "addressRegion": "WA",
-      "postalCode": "98801",
+      "postalCode": "98802",
       "addressCountry": "US"
     },
     "priceRange": "$$$",

@@ -14,7 +14,6 @@ const menuItems = [
   { label: 'Lookbook', href: '#lookbook', hash: true },
   { label: 'Services', href: '#features', hash: true },
   { label: 'Menu', href: '#pricing', hash: true },
-  { label: 'About', href: '#about', hash: true },
   { label: 'Contact', href: '/contact', hash: false },
 ] as const;
 
