@@ -154,22 +154,23 @@ export const LookbookSection: React.FC = () => {
 
                 {/* Gallery Grid - Editorial Masonry */}
                 <motion.div
-                    className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
+                    className="columns-1 md:columns-2 lg:columns-3 gap-12 lg:gap-16 space-y-12 lg:space-y-16"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredItems.map((item, index) => (
                             <motion.div
                                 key={item.id}
                                 layout
-                                initial={{ opacity: 0, clipPath: 'inset(100% 0 0 0)' }}
-                                whileInView={{ opacity: 1, clipPath: 'inset(0% 0 0 0)' }}
-                                viewport={{ once: true, margin: "-50px" }}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
                                 exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: index * 0.05 }}
-                                className="break-inside-avoid relative group overflow-hidden border border-white/5 bg-secondary/5 rounded-sm"
+                                transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: index * 0.1 }}
+                                className={`break-inside-avoid relative group overflow-hidden border border-border/20 bg-secondary/5 rounded-sm ${index % 4 === 0 ? 'lg:mt-24' : index % 3 === 0 ? 'lg:mt-12' : ''
+                                    }`}
                             >
-                                <div className="absolute top-4 left-4 z-40">
-                                    <span className="archive-number">{item.refId}</span>
+                                <div className="absolute top-6 left-6 z-40">
+                                    <span className="text-[10px] font-mono tracking-[0.3em] text-accent/60 uppercase">Artistry №{item.id.toString().padStart(2, '0')}</span>
                                 </div>
 
                                 <div className={`relative overflow-hidden ${item.aspectRatio === 'portrait' ? 'aspect-[3/4]' :

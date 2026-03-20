@@ -68,215 +68,168 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
         <section
             ref={sectionRef}
             onMouseMove={handleMouseMove}
-            className="relative w-full min-h-screen flex items-center justify-center bg-background overflow-hidden pt-20 pb-10"
+            className="relative w-full min-h-screen flex items-center justify-center bg-background overflow-hidden pt-24 pb-12"
         >
-            {/* Background Grain/Noise Overlay */}
-            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+            {/* Background Texture & Audio Visuals */}
+            <div className="noise-overlay" />
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-4 items-center">
+            <div className="container mx-auto px-6 relative z-10 lg:pl-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-4 items-center">
 
                     {/* Left Side: Content Box */}
-                    <div className="lg:col-span-5 flex flex-col items-start space-y-8 order-2 lg:order-1">
+                    <div className="lg:col-span-5 flex flex-col items-start space-y-12 order-2 lg:order-1">
                         <motion.div
                             style={{ x: textX, y: textY }}
-                            className="space-y-6"
+                            className="space-y-8"
                         >
-                            {badge && (
+                            <div className="space-y-4">
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.1 }}
-                                    className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-xs font-bold tracking-[0.2em] uppercase text-accent"
+                                    className="text-[10px] font-bold tracking-[0.5em] uppercase text-accent/60 flex items-center gap-4"
                                 >
-                                    <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-                                    </span>
-                                    {badge}
+                                    <div className="h-px w-8 bg-accent/30" />
+                                    The Destination
                                 </motion.div>
-                            )}
 
-                            <div className="space-y-2">
                                 <motion.h1
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                    className="text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-medium leading-[0.9] tracking-tighter text-foreground"
+                                    transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+                                    className="text-7xl md:text-8xl lg:text-[7rem] font-serif font-medium leading-[0.85] tracking-tight text-foreground"
                                 >
-                                    {title}
+                                    ADORABELLA <br /> HOUSE
                                 </motion.h1>
-                                <motion.p
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.3 }}
-                                    className="text-xl md:text-2xl font-serif italic text-accent"
-                                >
-                                    {subtitle}
-                                </motion.p>
                             </div>
 
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="text-muted-foreground text-lg max-w-md leading-relaxed"
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                                className="relative flex flex-col gap-6"
                             >
-                                {description}
-                            </motion.p>
+                                <div className="absolute -left-8 top-0 h-full w-[1px] bg-gradient-to-b from-accent/40 to-transparent" />
+                                <h2 className="text-2xl md:text-3xl font-serif italic text-accent/80 leading-snug max-w-md">
+                                    "A sanctuary for hair artistry & grace."
+                                </h2>
+                                <p className="text-muted-foreground/80 text-lg max-w-sm leading-relaxed font-light">
+                                    Elevating beauty through precision and faith-based devotion. Our private boutique in Chelan offers an exclusive, curated experience.
+                                </p>
+                            </motion.div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.5 }}
-                                className="flex flex-wrap gap-4 pt-4"
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                className="flex flex-wrap gap-8 pt-8"
                             >
                                 <Magnetic strength={0.2}>
                                     <button
                                         onClick={onPrimaryCtaClick}
-                                        className="group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-none border border-foreground bg-foreground px-8 text-sm font-bold tracking-widest uppercase text-background transition-all hover:bg-transparent hover:text-foreground focus:outline-none"
+                                        className="group relative h-16 items-center flex px-10 bg-foreground text-background text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-accent transition-all duration-500 overflow-hidden"
                                     >
-                                        <span className="relative z-10">{primaryCtaText}</span>
-                                        <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover:translate-x-1" />
+                                        Reserve Your Moment
+                                        <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                                     </button>
                                 </Magnetic>
 
-                                <Magnetic strength={0.1}>
-                                    <button
-                                        onClick={onSecondaryCtaClick}
-                                        className="inline-flex h-12 items-center justify-center px-8 text-sm font-bold tracking-widest uppercase text-foreground/70 transition-all hover:text-accent focus:outline-none border-b border-transparent hover:border-accent"
-                                    >
-                                        {secondaryCtaText}
-                                    </button>
-                                </Magnetic>
+                                <button
+                                    onClick={onSecondaryCtaClick}
+                                    className="h-16 flex items-center text-[10px] font-bold tracking-[0.3em] uppercase text-foreground hover:text-accent border-b border-border hover:border-accent transition-all duration-500"
+                                >
+                                    The Philosophy
+                                </button>
                             </motion.div>
                         </motion.div>
 
-                        {/* Magazine Metadata footer style */}
+                        {/* Subtle Faith Metric */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 0.8 }}
-                            className="hidden lg:flex flex-col space-y-2 pt-12 text-[10px] font-mono uppercase tracking-[0.2em] border-t border-border/50 w-full"
+                            transition={{ delay: 1 }}
+                            className="pt-16 flex items-center gap-6"
                         >
-                            <div className="flex flex-col space-y-1 text-muted-foreground/50">
-                                <span>Adorabella Archive No. 2026-X</span>
-                                <span>Issue: Spring / Summer Edition</span>
-                                <span>Curated by: Master Artistry Group</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-accent/80 font-bold">
-                                <span className="relative flex h-1.5 w-1.5">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent" />
-                                </span>
-                                <span>Placement Status: HIGHLY LIMITED</span>
+                            <span className="text-[18px] font-serif italic text-accent/40 w-8 inline-block text-center">†</span>
+                            <div className="flex flex-col">
+                                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-muted-foreground/40">Proverbs 31:30</span>
+                                <span className="text-[10px] font-light italic text-muted-foreground/60 italic">"Crowned in Grace"</span>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Right Side: Editorial Photo Stack */}
-                    <div className="lg:col-span-7 relative h-[500px] md:h-[600px] lg:h-[700px] order-1 lg:order-2">
+                    {/* Right Side: Overlapping Editorial Stack */}
+                    <div className="lg:col-span-7 relative h-[600px] lg:h-[800px] order-1 lg:order-2">
 
-                        {/* Main Center Image */}
+                        {/* Main Image Container */}
                         <motion.div
-                            style={{ x: mainImgX, y: mainImgY, rotate: 2 }}
-                            initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 2 }}
-                            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute z-20 left-[10%] top-[10%] w-[65%] h-[75%] shadow-[20px_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden rounded-sm group/img1"
+                            initial={{ opacity: 0, scale: 1.1 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+                            className="absolute z-10 right-0 top-1/2 -translate-y-1/2 w-[85%] h-[80%] overflow-hidden rounded-sm"
                         >
                             <Image
                                 src={images[0]}
                                 alt="Main Showcase"
                                 fill
-                                className="object-cover transition-transform duration-1000 group-hover/img1:scale-105"
+                                className="object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000 scale-105"
                                 priority
                             />
-                            <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
-
-                            {/* Watermark/Label */}
-                            <div className="absolute bottom-6 right-6 z-30 opacity-60">
-                                <span className="font-serif text-white text-sm tracking-[0.4em] uppercase">Private Art</span>
-                            </div>
-
-                            {/* Center Reveal Button/Label */}
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img1:opacity-100 transition-opacity duration-500">
-                                <span className="bg-black/60 px-6 py-2 border border-white/30 text-[10px] uppercase tracking-[0.3em] text-white">View Details</span>
-                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                         </motion.div>
 
-                        {/* Secondary Overlapping Image (Top Right) */}
+                        {/* Overlapping Glass Prompt Card 1 */}
                         <motion.div
-                            style={{ x: secondaryImgX, y: secondaryImgY, rotate: -3 }}
-                            initial={{ opacity: 0, x: 100, rotate: 0 }}
-                            animate={{ opacity: 1, x: 0, rotate: -3 }}
-                            transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute z-30 right-[5%] top-[5%] w-[35%] h-[40%] shadow-[10px_20px_40px_-10px_rgba(0,0,0,0.3)] overflow-hidden rounded-sm border-4 border-background group/img2"
+                            style={{ x: secondaryImgX, y: secondaryImgY }}
+                            className="absolute z-20 left-0 top-[15%] w-[45%] p-10 glass-gold border-white/10 backdrop-blur-2xl space-y-4"
+                        >
+                            <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-accent">Artistry</span>
+                            <p className="text-xl font-serif text-foreground leading-[1.2]">Unveiling the <br /><span className="italic text-accent">Collection</span></p>
+                            <div className="h-px w-full bg-accent/20" />
+                            <span className="text-[8px] font-mono text-muted-foreground uppercase tracking-widest">ART №01 / EST 2009</span>
+                        </motion.div>
+
+                        {/* Overlapping Glass Prompt Card 2 */}
+                        <motion.div
+                            style={{ x: tertiaryImgX, y: tertiaryImgY }}
+                            className="absolute z-30 right-[10%] bottom-[10%] w-[40%] p-8 glass-gold border-white/10 backdrop-blur-2xl flex flex-col items-center text-center space-y-3"
+                        >
+                            <div className="w-8 h-8 rounded-full border border-accent/30 flex items-center justify-center">
+                                <span className="text-[10px] italic text-accent">A</span>
+                            </div>
+                            <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-foreground">Technique</span>
+                            <span className="text-[14px] font-serif italic text-muted-foreground italic">"Precision in every strand"</span>
+                        </motion.div>
+
+                        {/* Sub-image Floating */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8, duration: 1.2 }}
+                            className="absolute z-0 left-[-5%] bottom-[15%] w-[35%] h-[40%] border-8 border-background shadow-2xl overflow-hidden"
                         >
                             <Image
                                 src={images[1]}
-                                alt="Detail Showcase"
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover/img2:scale-110"
-                            />
-                            <div className="absolute inset-0 ring-1 ring-inset ring-black/5" />
-                            <div className="absolute top-2 left-2 bg-background/95 px-2 py-1 flex flex-col opacity-0 group-hover/img2:opacity-100 transition-opacity border-l-2 border-accent">
-                                <span className="text-[8px] font-bold tracking-tighter uppercase text-foreground">Project 01</span>
-                                <span className="text-[6px] font-medium text-accent uppercase">Precision Cut</span>
-                            </div>
-                        </motion.div>
-
-                        {/* Tertiary Background Image (Bottom Left) */}
-                        <motion.div
-                            style={{ x: tertiaryImgX, y: tertiaryImgY, rotate: 1 }}
-                            initial={{ opacity: 0, x: -100, rotate: 0 }}
-                            animate={{ opacity: 1, x: 0, rotate: 1 }}
-                            transition={{ duration: 1.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute z-10 left-[0%] bottom-[5%] w-[40%] h-[45%] shadow-[0px_10px_30px_-5px_rgba(0,0,0,0.2)] overflow-hidden rounded-sm grayscale-[0.5] opacity-80 group/img3 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-                        >
-                            <Image
-                                src={images[2]}
-                                alt="Environment Showcase"
+                                alt="Detail"
                                 fill
                                 className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-accent/10 mix-blend-multiply group-hover/img3:bg-transparent transition-colors" />
-                            <div className="absolute bottom-2 left-2 bg-background/95 px-2 py-1 flex flex-col opacity-0 group-hover/img3:opacity-100 transition-opacity border-l-2 border-accent">
-                                <span className="text-[8px] font-bold tracking-tighter uppercase text-foreground">Project 02</span>
-                                <span className="text-[6px] font-medium text-accent uppercase">Master Color</span>
-                            </div>
                         </motion.div>
-
-                        {/* Decorative Magazine Elements */}
-                        <motion.div
-                            style={{ x: textX, y: textY }}
-                            className="absolute top-0 right-1/4 z-0 pointer-events-none opacity-10"
-                        >
-                            <span className="text-[20rem] font-serif leading-none select-none text-foreground">A</span>
-                        </motion.div>
-
-                        <div className="absolute bottom-[20%] right-[10%] z-40 bg-accent p-6 flex flex-col items-center justify-center space-y-1 shadow-2xl">
-                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-accent-foreground/60">Founded</span>
-                            <span className="text-2xl font-serif font-bold text-accent-foreground">2009</span>
-                            <div className="h-0.5 w-full bg-accent-foreground/20 my-2" />
-                            <span className="text-[8px] font-mono tracking-widest text-accent-foreground/80">LTD. EDITION</span>
-                        </div>
                     </div>
 
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Aesthetic Scroll Reveal Tag */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
-                onClick={onPrimaryCtaClick}
+                transition={{ delay: 2, duration: 1 }}
+                className="absolute left-8 bottom-12 hidden lg:flex flex-col items-start gap-4"
             >
-                <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-muted-foreground/60">Scroll to Explore</span>
-                <div className="w-px h-12 bg-gradient-to-b from-accent/50 to-transparent" />
+                <span className="archive-number !text-[8px] opacity-40">SPRING // SUMMER 2026</span>
+                <div className="h-24 w-px bg-gradient-to-t from-accent/40 to-transparent mx-auto" />
             </motion.div>
         </section>
+
     );
 };
