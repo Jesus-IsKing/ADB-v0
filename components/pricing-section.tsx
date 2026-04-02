@@ -54,19 +54,19 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-32 animate-slideUp">
-          <p className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Service Menu</p>
-          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-8 text-balance tracking-tight leading-[0.9]">
+        <div className="text-center mb-12 md:mb-32 animate-slideUp">
+          <p className="text-accent text-[9px] sm:text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Service Menu</p>
+          <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-6 md:mb-8 text-balance tracking-tight leading-[1.1] md:leading-[0.9]">
             Graceful <br /><span className="text-accent italic">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed px-4">
             Your hair is a blessed crown. Our mission is to serve you with excellence, providing restorative care and artistic mastery tailored to you.
           </p>
         </div>
 
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-20">
           {plans.map((plan, idx) => (
             <div
               key={idx}
@@ -82,13 +82,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
                 </div>
               )}
 
-              <div className="p-10 lg:p-12 space-y-8">
+              <div className="p-8 sm:p-10 lg:p-12 space-y-6 sm:space-y-8">
                 {/* Plan Header */}
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-serif font-medium text-foreground">{plan.name}</h3>
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-xl sm:text-2xl font-serif font-medium text-foreground">{plan.name}</h3>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-light text-accent">{plan.price}</span>
-                    <span className="text-muted-foreground text-[10px] uppercase tracking-widest">{plan.period}</span>
+                    <span className="text-3xl sm:text-4xl font-light text-accent">{plan.price}</span>
+                    <span className="text-muted-foreground text-[11px] sm:text-xs uppercase tracking-widest">{plan.period}</span>
                   </div>
                 </div>
 

@@ -38,23 +38,23 @@ export const SEOSchema = () => {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Precision Cut & Style",
-        "description": "Geometric precision cuts and signature blowouts by master stylists",
+        "name": "Signature Cut & Style",
+        "description": "Artistic precision cuts and signature high-shine finish by master stylists",
+        "price": "65",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Luminous Master Color",
+        "description": "Masterful color blending and beautiful dimensional highlights",
+        "price": "140",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Restorative Care",
+        "description": "Deep bond strengthening and healthy scalp care treatments",
         "price": "55",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Color Artistry",
-        "description": "Luxury balayage, artisan color, and bond-building repair services",
-        "price": "110",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Care & Repair",
-        "description": "Clinical hair repair treatments including Olaplex and Kerastase",
-        "price": "45",
         "priceCurrency": "USD"
       }
     ]

@@ -6,6 +6,8 @@ import { HeroSection } from '@/components/hero-section';
 import { LookbookSection } from '@/components/lookbook-section';
 import { FeaturesSection } from '@/components/features-section';
 import { HowItWorksSection } from '@/components/how-it-works-section';
+import { PhilosophySection } from '@/components/philosophy-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 import { PricingSection } from '@/components/pricing-section';
 import { Footer } from '@/components/footer';
 import { ModalCTA } from '@/components/modal-cta';
@@ -37,11 +39,19 @@ export default function Home() {
         <LookbookSection />
 
         <Reveal delay={0.1}>
+          <PhilosophySection />
+        </Reveal>
+
+        <Reveal delay={0.1}>
           <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
         </Reveal>
 
         <Reveal delay={0.1}>
           <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <TestimonialsSection />
         </Reveal>
 
         <Reveal delay={0.1}>

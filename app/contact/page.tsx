@@ -175,7 +175,7 @@ export default function ContactPage() {
                 },
                 {
                   q: 'Is there parking available?',
-                  a: 'Yes! We have dedicated client parking located directly behind the salon, as well as metered street parking on Beauty Street.',
+                  a: 'Yes! We have dedicated client parking located directly at the building, as well as ample street parking along Valley Mall Parkway.',
                 },
                 {
                   q: 'Do you offer bridal or event packages?',

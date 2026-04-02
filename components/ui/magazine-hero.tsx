@@ -77,18 +77,18 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-4 items-center">
 
                     {/* Left Side: Content Box */}
-                    <div className="lg:col-span-5 flex flex-col items-start space-y-12 order-2 lg:order-1">
+                    <div className="lg:col-span-5 flex flex-col items-start space-y-8 md:space-y-12 order-2 lg:order-1 px-4 sm:px-0">
                         <motion.div
                             style={{ x: textX, y: textY }}
-                            className="space-y-8"
+                            className="space-y-6 md:space-y-8"
                         >
                             <div className="space-y-4">
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    className="text-[10px] font-bold tracking-[0.5em] uppercase text-accent/60 flex items-center gap-4"
+                                    className="text-[9px] sm:text-[10px] font-bold tracking-[0.5em] uppercase text-accent/60 flex items-center gap-4"
                                 >
-                                    <div className="h-px w-8 bg-accent/30" />
+                                    <div className="h-px w-6 sm:w-8 bg-accent/30" />
                                     The Destination
                                 </motion.div>
 
@@ -96,9 +96,9 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-                                    className="text-7xl md:text-8xl lg:text-[7rem] font-serif font-medium leading-[0.85] tracking-tight text-foreground"
+                                    className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-serif font-medium leading-[1.1] sm:leading-[0.85] tracking-tight text-foreground text-balance"
                                 >
-                                    ADORABELLA <br /> HOUSE
+                                    ADORABELLA <br className="hidden xs:block sm:block" /> HOUSE
                                 </motion.h1>
                             </div>
 
@@ -106,14 +106,14 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="relative flex flex-col gap-6"
+                                className="relative flex flex-col gap-4 sm:gap-6"
                             >
-                                <div className="absolute -left-8 top-0 h-full w-[1px] bg-gradient-to-b from-accent/40 to-transparent" />
-                                <h2 className="text-2xl md:text-3xl font-serif italic text-accent/80 leading-snug max-w-md">
+                                <div className="absolute -left-4 sm:-left-8 top-0 h-full w-[1px] bg-gradient-to-b from-accent/40 to-transparent" />
+                                <h2 className="text-xl sm:text-2xl md:text-3xl font-serif italic text-accent/80 leading-snug max-w-md">
                                     "A sanctuary for hair artistry & grace."
                                 </h2>
-                                <p className="text-muted-foreground/80 text-lg max-w-sm leading-relaxed font-light">
-                                    Elevating beauty through precision and faith-based devotion. Our private boutique in Chelan offers an exclusive, curated experience.
+                                <p className="text-muted-foreground/80 text-base sm:text-lg max-w-sm leading-relaxed font-light">
+                                    Elevating beauty through precision and faith-based devotion. Our private boutique offers an exclusive, curated experience.
                                 </p>
                             </motion.div>
 
@@ -121,12 +121,12 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6 }}
-                                className="flex flex-wrap gap-8 pt-8"
+                                className="flex flex-wrap gap-4 sm:gap-8 pt-4 sm:pt-8"
                             >
                                 <Magnetic strength={0.2}>
                                     <button
                                         onClick={onPrimaryCtaClick}
-                                        className="group relative h-16 items-center flex px-10 bg-foreground text-background text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-accent transition-all duration-500 overflow-hidden"
+                                        className="group relative h-14 sm:h-16 items-center flex px-8 sm:px-10 bg-foreground text-background text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-accent transition-all duration-500 overflow-hidden w-full sm:w-auto justify-center"
                                     >
                                         Reserve Your Moment
                                         <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -135,7 +135,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
 
                                 <button
                                     onClick={onSecondaryCtaClick}
-                                    className="h-16 flex items-center text-[10px] font-bold tracking-[0.3em] uppercase text-foreground hover:text-accent border-b border-border hover:border-accent transition-all duration-500"
+                                    className="h-14 sm:h-16 flex items-center text-[10px] font-bold tracking-[0.3em] uppercase text-foreground hover:text-accent border-b border-border hover:border-accent transition-all duration-500 w-full sm:w-auto justify-center sm:justify-start"
                                 >
                                     The Philosophy
                                 </button>
@@ -147,25 +147,25 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 1 }}
-                            className="pt-16 flex items-center gap-6"
+                            className="pt-10 sm:pt-16 flex items-center gap-6"
                         >
                             <span className="text-[18px] font-serif italic text-accent/40 w-8 inline-block text-center">†</span>
                             <div className="flex flex-col">
                                 <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-muted-foreground/40">Proverbs 31:30</span>
-                                <span className="text-[10px] font-light italic text-muted-foreground/60 italic">"Crowned in Grace"</span>
+                                <span className="text-[10px] font-light italic text-muted-foreground/60">"Crowned in Grace"</span>
                             </div>
                         </motion.div>
                     </div>
 
                     {/* Right Side: Overlapping Editorial Stack */}
-                    <div className="lg:col-span-7 relative h-[600px] lg:h-[800px] order-1 lg:order-2">
+                    <div className="lg:col-span-7 relative h-[450px] sm:h-[600px] lg:h-[800px] order-1 lg:order-2">
 
                         {/* Main Image Container */}
                         <motion.div
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-                            className="absolute z-10 right-0 top-1/2 -translate-y-1/2 w-[85%] h-[80%] overflow-hidden rounded-sm"
+                            className="absolute z-10 right-0 top-1/2 -translate-y-1/2 w-[90%] sm:w-[85%] h-[90%] sm:h-[80%] overflow-hidden rounded-sm"
                         >
                             <Image
                                 src={images[0]}
@@ -180,24 +180,24 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                         {/* Overlapping Glass Prompt Card 1 */}
                         <motion.div
                             style={{ x: secondaryImgX, y: secondaryImgY }}
-                            className="absolute z-20 left-0 top-[15%] w-[45%] p-10 glass-gold border-white/10 backdrop-blur-2xl space-y-4"
+                            className="absolute z-20 left-0 top-[10%] sm:top-[15%] w-[65%] sm:w-[50%] lg:w-[45%] p-5 sm:p-10 glass-gold border-white/10 backdrop-blur-2xl space-y-3 sm:space-y-4"
                         >
-                            <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-accent">Artistry</span>
-                            <p className="text-xl font-serif text-foreground leading-[1.2]">Unveiling the <br /><span className="italic text-accent">Collection</span></p>
+                            <span className="text-[8px] sm:text-[9px] font-bold tracking-[0.4em] uppercase text-accent">Artistry</span>
+                            <p className="text-base sm:text-xl font-serif text-foreground leading-[1.2]">Unveiling the <br /><span className="italic text-accent">Collection</span></p>
                             <div className="h-px w-full bg-accent/20" />
-                            <span className="text-[8px] font-mono text-muted-foreground uppercase tracking-widest">ART №01 / EST 2009</span>
+                            <span className="text-[7px] sm:text-[8px] font-mono text-muted-foreground uppercase tracking-widest">ART №01 / EST 2009</span>
                         </motion.div>
 
                         {/* Overlapping Glass Prompt Card 2 */}
                         <motion.div
                             style={{ x: tertiaryImgX, y: tertiaryImgY }}
-                            className="absolute z-30 right-[10%] bottom-[10%] w-[40%] p-8 glass-gold border-white/10 backdrop-blur-2xl flex flex-col items-center text-center space-y-3"
+                            className="absolute z-30 right-[2%] sm:right-[5%] lg:right-[10%] bottom-[5%] sm:bottom-[10%] w-[55%] sm:w-[45%] lg:w-[40%] p-5 sm:p-8 glass-gold border-white/10 backdrop-blur-2xl flex flex-col items-center text-center space-y-2 sm:space-y-3"
                         >
-                            <div className="w-8 h-8 rounded-full border border-accent/30 flex items-center justify-center">
-                                <span className="text-[10px] italic text-accent">A</span>
+                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-accent/30 flex items-center justify-center">
+                                <span className="text-[9px] sm:text-[10px] italic text-accent">A</span>
                             </div>
-                            <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-foreground">Technique</span>
-                            <span className="text-[14px] font-serif italic text-muted-foreground italic">"Precision in every strand"</span>
+                            <span className="text-[8px] sm:text-[9px] font-bold tracking-[0.4em] uppercase text-foreground">Technique</span>
+                            <span className="text-[11px] sm:text-[14px] font-serif italic text-muted-foreground">"Precision in every strand"</span>
                         </motion.div>
 
                         {/* Sub-image Floating */}
@@ -205,7 +205,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                             initial={{ opacity: 0, y: 100 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.8, duration: 1.2 }}
-                            className="absolute z-0 left-[-5%] bottom-[15%] w-[35%] h-[40%] border-8 border-background shadow-2xl overflow-hidden"
+                            className="absolute z-0 left-[-2%] sm:left-[-5%] bottom-[10%] sm:bottom-[15%] w-[35%] h-[35%] sm:h-[40%] border-4 sm:border-8 border-background shadow-2xl overflow-hidden"
                         >
                             <Image
                                 src={images[1]}

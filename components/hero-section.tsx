@@ -16,8 +16,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
     document.getElementById('lookbook')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSecondaryAction = () => {
-    router.push('/contact');
+  const scrollToPhilosophy = () => {
+    document.getElementById('philosophy')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -31,9 +31,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCTAClick }) => {
         subtitle="The Adorabella Journal"
         description="A private destination for artistic excellence. We operate via a waitlist to ensure every guest receives undivided attention at Adorabella House. Explore our archive of precision cuts and restorative care."
         primaryCtaText="Explore The House"
-        secondaryCtaText="Request Your Invite"
+        secondaryCtaText="The Philosophy"
         onPrimaryCtaClick={scrollToLookbook}
-        onSecondaryCtaClick={handleSecondaryAction}
+        onSecondaryCtaClick={scrollToPhilosophy}
         images={[
           "/lookbook-real-1.jpg",
           "/lookbook-real-4.jpg",
