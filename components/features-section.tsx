@@ -41,12 +41,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
         {/* Section Header */}
         <Reveal>
           <div className="text-center mb-16 md:mb-24">
+            <p className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-4">Our Foundations</p>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
-              Our Signature <span className="text-accent italic">Expertise</span>
+              Devoted to <span className="text-accent italic">His Excellence</span>
             </h2>
 
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Where luxury meets artistry in every style.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+              Where luxury meets artistry in every style, following Jesus Christ as the source of all beauty and grace.
             </p>
           </div>
         </Reveal>

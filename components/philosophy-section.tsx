@@ -46,9 +46,9 @@ export const PhilosophySection: React.FC = () => {
                     <div className="lg:col-span-6 space-y-12 order-1 lg:order-2">
                         <Reveal>
                             <div className="space-y-6">
-                                <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-accent">The Philosophy</p>
+                                <p className="text-[10px] font-black tracking-[0.6em] uppercase text-accent">Our Foundations</p>
                                 <h2 className="text-4xl xs:text-5xl sm:text-6xl font-serif font-medium text-foreground leading-[1.1] tracking-tight">
-                                    A Devoted <br /><span className="text-accent italic">Heart for Artistry</span>
+                                    Guided by <br /><span className="text-accent italic">His Glory Alone</span>
                                 </h2>
                                 <div className="h-px w-24 bg-accent/40" />
                             </div>
@@ -57,10 +57,10 @@ export const PhilosophySection: React.FC = () => {
                         <Reveal delay={0.2}>
                             <div className="space-y-8 text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
                                 <p>
-                                    At Adorabella House, we believe your hair is a crown of glory. Founded by Natalie, our house was built on the foundation of excellence, precision, and a faith-based commitment to serving others.
+                                    At Adorabella House, our work is not just artistry—it is an act of following Jesus Christ, the Only God. Founded locally in East Wenatchee, we believe every guest who enters this space is a child of God, worthy of the highest level of care and precision.
                                 </p>
                                 <p>
-                                    We moved beyond the traditional salon model to create a "Private Destination"—a space where time slows down, and artistry takes center stage. Every cut, every color, and every restorative treatment is an act of devotion to the individual beauty God has bestowed upon you.
+                                    As we serve you, we seek to reflect the excellence of our Creator. Adorabella House is a private destination where time is given back to the individual, and where our mastery is dedicated to honoring the beauty God has bestowed upon you.
                                 </p>
 
                                 <div className="grid grid-cols-2 gap-8 pt-4">

@@ -4,80 +4,56 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f9fafb;
-  --foreground: #111827;
-  --card: #ffffff;
-  --card-foreground: #111827;
-  --popover: #ffffff;
-  --popover-foreground: #111827;
-  --primary: #111827;
-  --primary-foreground: #f9fafb;
-  --secondary: #f3f4f6;
-  --secondary-foreground: #111827;
-  --muted: #e5e7eb;
-  --muted-foreground: #6b7280;
-  --accent: #d4af37;
-  --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #ffffff;
-  --ring: #d4af37;
-  --chart-1: #d4af37;
-  --chart-2: #4b5563;
-  --chart-3: #9ca3af;
-  --chart-4: #fbbf24;
-  --chart-5: #10b981;
-  --radius: 0.625rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #d4af37;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #d4af37;
-  --sidebar-accent-foreground: #0f172a;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #d4af37;
+  --background: oklch(1 0 0);
+  /* Purest White "Peace" Background */
+  --foreground: oklch(0.12 0.01 0);
+  /* Deeper Slate for precise contrast */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.01 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.01 0);
+  --primary: oklch(0.12 0.01 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.98 0.005 0);
+  --secondary-foreground: oklch(0.12 0.01 0);
+  --muted: oklch(0.98 0.005 0);
+  --muted-foreground: oklch(0.4 0.02 0);
+  --accent: oklch(0.68 0.12 85);
+  /* Refined Soft Gold */
+  --accent-foreground: oklch(0.12 0.01 0);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.01 0 / 0.15);
+  --input: oklch(0.9 0.01 0 / 0.15);
+  --ring: oklch(0.68 0.12 85 / 0.3);
+  --radius: 0rem;
+  /* Sharp modern edges */
 }
 
 .dark {
-  --background: #0f0f0f;
-  --foreground: #f5f5f5;
-  --card: #1a1a1a;
-  --card-foreground: #f5f5f5;
-  --popover: #1a1a1a;
-  --popover-foreground: #f5f5f5;
-  --primary: #f5f5f5;
-  --primary-foreground: #0f0f0f;
-  --secondary: #2a2a2a;
-  --secondary-foreground: #f5f5f5;
-  --muted: #404040;
-  --muted-foreground: #a8a8a8;
-  --accent: #d4af37;
-  --accent-foreground: #0f0f0f;
-  --destructive: #ff4444;
-  --destructive-foreground: #ffffff;
-  --border: #2a2a2a;
-  --input: #1a1a1a;
-  --ring: #d4af37;
-  --chart-1: #d4af37;
-  --chart-2: #6b7280;
-  --chart-3: #4b5563;
-  --chart-4: #374151;
-  --chart-5: #1f2937;
-  --sidebar: #1a1a1a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #d4af37;
-  --sidebar-primary-foreground: #0f0f0f;
-  --sidebar-accent: #d4af37;
-  --sidebar-accent-foreground: #0f0f0f;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #d4af37;
+  --background: oklch(0.1 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.1 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.95 0 0);
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.68 0.12 85);
+  --accent-foreground: oklch(0.1 0 0);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.4 0 0);
 }
 
 @theme inline {
-  --font-sans: var(--font-sans), 'Geist', sans-serif;
-  --font-serif: var(--font-serif), 'Cormorant Garamond', serif;
-  --font-mono: var(--font-mono), 'Geist Mono', monospace;
+  --font-sans: var(--font-sans), 'Geist', 'Geist Fallback';
+  --font-mono: var(--font-mono), 'Geist Mono', 'Geist Mono Fallback';
+  --font-serif: var(--font-serif);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -97,98 +73,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-  }
-}
-
-@layer components {
-
-  /* Noise Overlay - Optimized size and animation */
-  .noise-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-    background-repeat: repeat;
-    opacity: 0.04;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-    animation: grain 8s steps(10) infinite;
-  }
-
-  /* Glass Effect Styles - Thinner borders for premium look */
-  .glass {
-    @apply backdrop-blur-xl bg-white/5 border border-white/5 rounded-2xl;
-  }
-
-  .glass-gold {
-    @apply backdrop-blur-xl bg-white/5 border border-accent/20 rounded-2xl shadow-2xl;
-    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.05), 0 0 40px rgba(212, 175, 55, 0.03);
-  }
-
-  .glass-subtle {
-    @apply backdrop-blur-md bg-white/3 border border-white/5 rounded-2xl;
-  }
-
-  /* Aura Blobs - Performance Optimized */
-  .aura-blob {
-    @apply absolute opacity-60 pointer-events-none;
-    will-change: transform;
-    animation: move-aura 20s ease-in-out infinite;
-  }
-
-  /* Smooth animations */
-  @keyframes move-aura {
-
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-  }
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
 
   @keyframes grain {
 
@@ -198,191 +86,136 @@
     }
 
     10% {
-      transform: translate(-5%, -10%);
+      transform: translate(-2%, -4%);
     }
 
     20% {
-      transform: translate(-15%, 5%);
+      transform: translate(-6%, 2%);
     }
 
     30% {
-      transform: translate(7%, -25%);
+      transform: translate(3%, -8%);
     }
 
     40% {
-      transform: translate(-5%, 25%);
+      transform: translate(-2%, 8%);
     }
 
     50% {
-      transform: translate(-15%, 10%);
+      transform: translate(-6%, 4%);
     }
 
     60% {
-      transform: translate(15%, 0%);
+      transform: translate(6%, 0%);
     }
 
     70% {
-      transform: translate(0%, 15%);
+      transform: translate(0%, 6%);
     }
 
     80% {
-      transform: translate(3%, 35%);
+      transform: translate(1%, 12%);
     }
 
     90% {
-      transform: translate(-10%, 10%);
+      transform: translate(-4%, 4%);
     }
   }
+}
 
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes glow {
-
-    0%,
-    100% {
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-    }
-
-    50% {
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-    }
-  }
-
-  .animate-slideUp {
-    animation: slideUp 0.6s ease-out;
-  }
-
-  .animate-fadeIn {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-slideInLeft {
-    animation: slideInLeft 0.6s ease-out;
-  }
-
-  .animate-slideInRight {
-    animation: slideInRight 0.6s ease-out;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite;
-  }
-
-  /* Text utilities */
+@layer utilities {
   .font-serif {
-    font-family: var(--font-serif), serif;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-luxury {
-    @apply font-serif tracking-tight leading-[1.1];
-  }
-
-  /* Gold accent utilities */
-  .accent-gold {
-    color: #d4af37;
-  }
-
-  .photo-glow {
-    position: relative;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .photo-glow::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    box-shadow: 0 0 0px rgba(212, 175, 55, 0);
-    transition: box-shadow 0.5s ease;
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
-  .photo-glow:hover::after {
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
-  }
-
-  .lookbook-watermark {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
     font-family: var(--font-serif);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+  }
+
+  .glass-modern {
+    @apply bg-background/60 backdrop-blur-2xl border border-border/10;
+  }
+
+  .glass-gold {
+    @apply bg-background/50 backdrop-blur-3xl border border-accent/10;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Cinematic Shutter Reveal */
+  .shutter-mask {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  /* Technical Specs Typography */
+  .font-technical {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: white;
-    opacity: 0.3;
+    font-weight: 600;
+  }
+
+  .archive-number {
+    font-family: var(--font-mono);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    @apply opacity-30 select-none;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    opacity: 0.015;
     pointer-events: none;
-    user-select: none;
+    z-index: 9999;
+    animation: grain 8s steps(10) infinite;
   }
 
-  .border-accent {
-    border-color: #d4af37;
-  }
-
-  .bg-accent {
-    background-color: #d4af37;
-  }
-
-  /* -------------------------------------------------------------------------
-   * Hero section header – responsive typography & hierarchy
-   * Strategy: Mobile-first. Base = 320px, then 768px, 1024px, 1440px+.
-   * Business name is the single most prominent element (H1); tagline is
-   * secondary. Uses clamp() for fluid type and spacing without media queries.
-   * Contrast: foreground on dark background meets WCAG AA (e.g. #f5f5f5 on #0f0f0f).
-   * ----------------------------------------------------------------------- */
-
-  /* Fluid font size: min 2rem (320px) → preferred scales with viewport → max 4.5rem (1440px+).
-   * Line height and letter-spacing keep the name readable and elegant. */
   .hero-business-name {
-    font-size: clamp(3rem, 12vw, 8rem);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
-    font-weight: 500;
-    color: var(--foreground);
     font-family: var(--font-serif);
-  }
-
-  /* Tagline: clearly subordinate to the business name; fluid but smaller. */
-  .hero-tagline {
-    font-size: clamp(0.75rem, 2vw, 1.1rem);
-    line-height: 1.4;
-    color: var(--accent);
     font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-family: var(--font-sans);
-    max-width: 28em;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    font-size: clamp(3rem, 15vw, 10rem);
+    @apply text-foreground;
   }
 
-  /* Spacing between hero header elements: fluid vertical rhythm so the
-   * name has adequate white space and doesn’t crowd badge or CTAs. */
-  .hero-header-spacing {
-    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  .hero-tagline {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    @apply text-accent;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground selection:bg-accent/20 selection:text-accent-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  /* Lenis smooth scrolling support */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 }

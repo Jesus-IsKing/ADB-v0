@@ -27,15 +27,15 @@ export const Footer: React.FC<FooterProps> = ({ onCTAClick, onBackToTop }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           {/* Brand */}
-          <div className="md:col-span-5 space-y-8">
-            <h3 className="text-4xl font-serif italic text-accent tracking-tighter">Adorabella</h3>
-            <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-sm">
-              A private destination for hair artistry and restoration. Devoted to excellence in every strand, guided by grace.
+          <div className="md:col-span-12 lg:col-span-5 space-y-8">
+            <h3 className="text-4xl font-serif font-medium text-foreground tracking-tighter">Adorabella <span className="italic font-light text-accent">House</span></h3>
+            <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-md">
+              Following Jesus Christ, the Only God. A private destination for hair artistry and restoration. Devoted to excellence in every strand, guided by Grace alone.
             </p>
-            <div className="pt-4 flex gap-6">
-              {/* Social placeholders or real links if provided */}
-              <div className="w-10 h-px bg-accent/30 self-center" />
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-accent/60 italic">Est // 2009</span>
+            <div className="pt-4 flex items-center gap-6">
+              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-accent/60">Soli Deo Gloria</span>
+              <div className="w-10 h-px bg-accent/20" />
+              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-accent/60 italic text-balance">Est // 2009 — East Wenatchee</span>
             </div>
           </div>
 

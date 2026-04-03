@@ -34,21 +34,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-[100] glass-gold h-16 md:h-20" aria-label="Main navigation">
+    <nav className="fixed top-0 w-full z-[100] border-b border-border/5 bg-background/80 backdrop-blur-xl h-16 md:h-20" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <Magnetic strength={0.3}>
             <Link
               href="/"
-              className="text-2xl sm:text-3xl font-serif italic text-accent hover:text-[#c9a227] transition-all focus:outline-none rounded-sm px-2 py-1"
+              className="text-2xl sm:text-3xl font-serif font-medium tracking-tight text-foreground hover:text-accent transition-all focus:outline-none rounded-sm"
             >
-              Adorabella
+              Adorabella <span className="italic font-light text-accent">House</span>
             </Link>
           </Magnetic>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-12 text-[10px] font-bold tracking-[0.3em] uppercase">
+          <div className="hidden md:flex items-center gap-12 text-[10px] font-bold tracking-[0.4em] uppercase">
             {menuItems.map((item) => (
               <Magnetic key={item.label} strength={0.2}>
                 <Link
@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
             <Magnetic strength={0.2}>
               <button
                 onClick={onCTAClick}
-                className="px-8 py-3 bg-foreground text-background text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-accent transition-all duration-500 rounded-sm"
+                className="px-8 py-3 bg-foreground text-background text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-accent transition-all duration-500"
               >
                 Inquire
               </button>
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-              className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[100] flex flex-col items-center justify-center space-y-12 md:hidden"
+              className="fixed inset-0 bg-background z-[100] flex flex-col items-center justify-center space-y-12 md:hidden"
             >
               <div className="flex flex-col items-center space-y-8">
                 {menuItems.map((item, index) => (
@@ -138,11 +138,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
                   Join Waitlist
                 </button>
               </motion.div>
-
-              {/* Mobile Menu Footer Decoration */}
-              <div className="absolute bottom-12 text-[10px] tracking-[0.5em] text-accent/30 uppercase">
-                EST // 2009
-              </div>
             </motion.div>
           )}
         </AnimatePresence>

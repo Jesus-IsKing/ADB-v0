@@ -4,8 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { SEOSchema } from '@/components/seo-schema'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
-import { VisualAura } from '@/components/visual-aura'
 import { CustomCursor } from '@/components/custom-cursor'
+import { SmoothScroll } from '@/components/ui/smooth-scroll'
 import './globals.css'
 
 const geistSans = Geist({
@@ -26,11 +26,11 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Adorabella House | Premium Beauty & Artistry',
-  description: 'Experience premium hair styling, artisan color, and restorative care at Adorabella House. A private destination for excellence and restoration.',
-  keywords: 'premium hair house, expert hair styling, artisan color, luxury beauty services, Wenatchee hair house',
+  title: 'Adorabella House | Following Jesus Christ',
+  description: 'Experience premium hair styling, artisan color, and restorative care at Adorabella House. A private destination for excellence and restoration, following Jesus Christ.',
+  keywords: 'premium hair house, expert hair styling, artisan color, luxury beauty services, Wenatchee hair house, christian business',
   openGraph: {
-    title: 'Adorabella House | Premium Beauty & Artistry',
+    title: 'Adorabella House | Following Jesus Christ',
     description: 'Experience premium hair styling and artisan color services at Adorabella House.',
     type: 'website',
   },
@@ -66,19 +66,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <SEOSchema />
-        <meta name="theme-color" content="#f9fafb" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} font-sans antialiased text-foreground selection:bg-accent/30 selection:text-accent-foreground`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} font-sans antialiased text-foreground selection:bg-accent/30 selection:text-accent-foreground bg-white`}>
         <div className="noise-overlay" />
-        <VisualAura />
         <CustomCursor />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
         >
-          {children}
-          <Toaster />
+          <SmoothScroll>
+            {children}
+            <Toaster />
+          </SmoothScroll>
         </ThemeProvider>
         <Analytics />
       </body>
