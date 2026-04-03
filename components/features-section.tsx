@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ButtonCTA } from './button-cta';
+import { Reveal } from './ui/reveal';
 import { Scissors, Palette, Sparkles } from 'lucide-react';
 
 interface FeaturesSectionProps {
@@ -38,52 +39,56 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({ onCTAClick }) 
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24 animate-slideUp">
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
-            Our Signature <span className="text-accent italic">Expertise</span>
-          </h2>
+        <Reveal>
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-medium text-foreground mb-6 text-balance tracking-tight">
+              Our Signature <span className="text-accent italic">Expertise</span>
+            </h2>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Where luxury meets artistry in every style.
-          </p>
-        </div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Where luxury meets artistry in every style.
+            </p>
+          </div>
+        </Reveal>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="glass-gold group hover:shadow-xl transition-all duration-300 overflow-hidden animate-slideUp"
-              style={{ animationDelay: `${idx * 100}ms` }}
-            >
-              {/* Feature Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div
+                className="glass-gold h-full group hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                {/* Feature Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
 
-              {/* Feature Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex justify-start">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+                {/* Feature Content */}
+                <div className="p-6 space-y-4">
+                  <div className="flex justify-start">{feature.icon}</div>
+                  <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center pt-8">
-          <ButtonCTA size="lg" onClick={onCTAClick}>
-            Request Your Invitation
-          </ButtonCTA>
-        </div>
+        <Reveal delay={0.4}>
+          <div className="flex justify-center pt-8">
+            <ButtonCTA size="lg" onClick={onCTAClick}>
+              Request Your Invitation
+            </ButtonCTA>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

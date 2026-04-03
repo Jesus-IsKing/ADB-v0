@@ -1,5 +1,8 @@
 'use client';
 
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ButtonCTA } from './button-cta';
 import { Magnetic } from './ui/magnetic';
@@ -145,7 +148,5 @@ export const Navbar: React.FC<NavbarProps> = ({ onCTAClick }) => {
         </AnimatePresence>
       </div>
     </nav>
-  );
-};
   );
 };

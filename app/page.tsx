@@ -38,22 +38,10 @@ export default function Home() {
 
         <LookbookSection />
 
-        <Reveal delay={0.1}>
-          <PhilosophySection />
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <TestimonialsSection />
-        </Reveal>
-
+        <PhilosophySection />
+        <HowItWorksSection onCTAClick={() => setIsModalOpen(true)} />
+        <FeaturesSection onCTAClick={() => setIsModalOpen(true)} />
+        <TestimonialsSection />
         <Reveal delay={0.1}>
           <PricingSection onCTAClick={() => setIsModalOpen(true)} />
         </Reveal>

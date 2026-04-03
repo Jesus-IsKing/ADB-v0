@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ButtonCTA } from './button-cta';
+import { Reveal } from './ui/reveal';
 
 interface PricingSectionProps {
   onCTAClick?: () => void;
@@ -54,75 +55,79 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onCTAClick }) =>
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-32 animate-slideUp">
-          <p className="text-accent text-[9px] sm:text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Service Menu</p>
-          <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-6 md:mb-8 text-balance tracking-tight leading-[1.1] md:leading-[0.9]">
-            Graceful <br /><span className="text-accent italic">Services</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed px-4">
-            Your hair is a blessed crown. Our mission is to serve you with excellence, providing restorative care and artistic mastery tailored to you.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-12 md:mb-32">
+            <p className="text-accent text-[9px] sm:text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Service Menu</p>
+            <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-serif font-medium text-foreground mb-6 md:mb-8 text-balance tracking-tight leading-[1.1] md:leading-[0.9]">
+              Graceful <br /><span className="text-accent italic">Services</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed px-4">
+              Your hair is a blessed crown. Our mission is to serve you with excellence, providing restorative care and artistic mastery tailored to you.
+            </p>
+          </div>
+        </Reveal>
 
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-20">
           {plans.map((plan, idx) => (
-            <div
-              key={idx}
-              className={`border border-border/50 group hover:border-accent/30 transition-all duration-700 overflow-hidden animate-slideUp ${plan.highlighted
-                ? 'bg-secondary/10 md:scale-105 relative'
-                : 'bg-transparent'
-                }`}
-              style={{ animationDelay: `${idx * 100}ms` }}
-            >
-              {plan.highlighted && (
-                <div className="bg-accent text-accent-foreground py-2 text-center text-[8px] tracking-[0.3em] font-bold uppercase">
-                  Expert Recommendation
-                </div>
-              )}
-
-              <div className="p-8 sm:p-10 lg:p-12 space-y-6 sm:space-y-8">
-                {/* Plan Header */}
-                <div className="space-y-2 sm:space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-serif font-medium text-foreground">{plan.name}</h3>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl font-light text-accent">{plan.price}</span>
-                    <span className="text-muted-foreground text-[11px] sm:text-xs uppercase tracking-widest">{plan.period}</span>
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div
+                className={`border border-border/50 h-full group hover:border-accent/30 transition-all duration-700 overflow-hidden ${plan.highlighted
+                  ? 'bg-secondary/10 md:scale-105 relative'
+                  : 'bg-transparent'
+                  }`}
+              >
+                {plan.highlighted && (
+                  <div className="bg-accent text-accent-foreground py-2 text-center text-[8px] tracking-[0.3em] font-bold uppercase">
+                    Expert Recommendation
                   </div>
+                )}
+
+                <div className="p-8 sm:p-10 lg:p-12 space-y-6 sm:space-y-8">
+                  {/* Plan Header */}
+                  <div className="space-y-2 sm:space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-serif font-medium text-foreground">{plan.name}</h3>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-light text-accent">{plan.price}</span>
+                      <span className="text-muted-foreground text-[11px] sm:text-xs uppercase tracking-widest">{plan.period}</span>
+                    </div>
+                  </div>
+
+                  {/* Features List */}
+                  <ul className="space-y-4">
+                    {plan.features.map((feature, featureIdx) => (
+                      <li key={featureIdx} className="flex items-center gap-4 text-xs tracking-wide text-foreground/70 group-hover:text-foreground transition-colors">
+                        <div className="w-1 h-1 bg-accent rounded-full" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <button
+                    onClick={onCTAClick}
+                    className={`w-full py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${plan.highlighted
+                      ? 'bg-foreground text-background hover:bg-accent'
+                      : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
+                      }`}
+                  >
+                    Join Private Guest List
+                  </button>
                 </div>
-
-                {/* Features List */}
-                <ul className="space-y-4">
-                  {plan.features.map((feature, featureIdx) => (
-                    <li key={featureIdx} className="flex items-center gap-4 text-xs tracking-wide text-foreground/70 group-hover:text-foreground transition-colors">
-                      <div className="w-1 h-1 bg-accent rounded-full" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button
-                  onClick={onCTAClick}
-                  className={`w-full py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-500 ${plan.highlighted
-                    ? 'bg-foreground text-background hover:bg-accent'
-                    : 'bg-transparent border border-border text-foreground hover:border-accent hover:text-accent'
-                    }`}
-                >
-                  Join Private Guest List
-                </button>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Pricing Notice */}
-        <div className="text-center animate-slideUp" style={{ animationDelay: '400ms' }}>
-          <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground italic max-w-xl mx-auto">
-            * All services are tailored to your specific needs. Final pricing will be provided during your consultation.
-          </p>
-        </div>
+        <Reveal delay={0.4}>
+          <div className="text-center">
+            <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground italic max-w-xl mx-auto">
+              * All services are tailored to your specific needs. Final pricing will be provided during your consultation.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

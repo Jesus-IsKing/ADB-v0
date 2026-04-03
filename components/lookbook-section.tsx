@@ -1,7 +1,12 @@
 'use client';
 
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
 import { Magnetic } from './ui/magnetic';
+import { Reveal } from './ui/reveal';
+import { ParallaxImage } from './ui/parallax-image';
 import { Download, Share2, ZoomIn, X } from 'lucide-react';
 
 const CATEGORIES = ['All', 'Precision Cuts', 'Master Color', 'Restorative Care'] as const;

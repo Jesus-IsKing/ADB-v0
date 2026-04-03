@@ -110,7 +110,7 @@ export const MagazineHero: React.FC<MagazineHeroProps> = ({
                             >
                                 <div className="absolute -left-4 sm:-left-8 top-0 h-full w-[1px] bg-gradient-to-b from-accent/40 to-transparent" />
                                 <h2 className="text-xl sm:text-2xl md:text-3xl font-serif italic text-accent/80 leading-snug max-w-md">
-                                    "A sanctuary for hair artistry & grace."
+                                    "A private destination for hair artistry & grace."
                                 </h2>
                                 <p className="text-muted-foreground/80 text-base sm:text-lg max-w-sm leading-relaxed font-light">
                                     Elevating beauty through precision and faith-based devotion. Our private boutique offers an exclusive, curated experience.
